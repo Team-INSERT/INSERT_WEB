@@ -1,7 +1,16 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/home";
 
 function App() {
-  return <div>인서트인턴화이팅~</div>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
