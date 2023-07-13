@@ -4,6 +4,7 @@ const color = {
   on_tertiary: "#E6E6E6",
   content: "#D9D9D9",
   tertiary: "#303441",
+  text: "#797979",
 };
 
 export default color;
