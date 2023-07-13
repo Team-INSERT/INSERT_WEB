@@ -136,5 +136,5 @@ export const HomePageFooter = styled.p`
   color: ${color.text};
   font-size: 15px;
   font-weight: 700px;
-  margin: 3% 0 2.5% 10%;
+  margin: 3% 0 4% 10%;
 `;
