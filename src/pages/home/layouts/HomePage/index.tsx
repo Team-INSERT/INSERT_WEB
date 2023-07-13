@@ -37,7 +37,7 @@ function HomePage() {
           <S.HomePageCommit>{commit}</S.HomePageCommit>
         </S.HomePageCommitSection>
         <S.HomePageTimeSection>
-          <S.HomePageTimeText>함께 한 시간</S.HomePageTimeText>
+          <S.HomePageTimeText>함께한 시간</S.HomePageTimeText>
           <S.HomePageTime>{time}</S.HomePageTime>
         </S.HomePageTimeSection>
       </S.HomePageMiddle2>
