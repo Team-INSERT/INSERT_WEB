@@ -4,7 +4,7 @@ import color from "../../styles/color";
 import { font } from "../../styles/font";
 
 export const HeaderLayout = styled.header`
-  width: 100vw;
+  width: 100%;
   height: 48px;
   display: flex;
   align-items: center;
