@@ -16,7 +16,7 @@ function HomePage() {
         <S.HomePageTitle>
           Team. INSERT{" "}
           <S.HomePageSubTitle>
-            안녕하시와요일단멋진말넣기전에...
+            부산소프트웨어마이스터고 플랫폼 개발 동아리 INSERT 입니다.
           </S.HomePageSubTitle>
         </S.HomePageTitle>
         <S.HomePageLogo src={Logo} />
