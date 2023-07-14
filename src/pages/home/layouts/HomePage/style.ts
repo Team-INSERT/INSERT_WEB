@@ -22,7 +22,7 @@ export const HomePageHeader = styled.div`
 
 export const HomePageTitle = styled.h1`
   color: ${color.black};
-  font-size: 72px;
+  ${font.D1};
   margin: 3% 0 0 10%;
 `;
 
@@ -31,8 +31,7 @@ export const HomePageSubTitle = styled.p`
   width: 800px;
   color: ${color.black};
   margin: 0 0 0 10%;
-  font-weight: 700;
-  font-size: 28px;
+  ${font.H2};
 `;
 
 export const HomePageHr = styled.div`
@@ -84,7 +83,6 @@ export const Value2 = styled.p`
 `;
 export const HomePageFooter = styled.p`
   color: ${color.text};
-  font-size: 15px;
-  font-weight: 700px;
+  ${font.p2};
   margin: 3% 0 4% 10%;
 `;
