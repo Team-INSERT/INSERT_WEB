@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": ".", // 기본 경로를 프로젝트 최상단으로 설정
+    "paths": {
+      "components/*": ["src/components/*"],
+      "pages/*": ["src/pages/*"],
+      "assets/*": ["src/assets/*"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
