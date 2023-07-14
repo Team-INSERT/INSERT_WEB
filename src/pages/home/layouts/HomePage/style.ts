@@ -11,13 +11,11 @@ export const HomePageLayOut = styled.div`
 export const HomePageLogo = styled.img`
   width: 101.464px;
   height: 94.953px;
-  margin: 4% 0 0 80%;
-  position: absolute;
+  margin: 4% 0 0 10%;
 `;
 
 export const HomePageHeader = styled.div`
   display: flex;
-  flex-direction: column;
 `;
 
 export const HomePageTitle = styled.h1`
@@ -30,7 +28,7 @@ export const HomePageSubTitle = styled.p`
   display: flex;
   width: 800px;
   color: ${color.black};
-  margin: 0 0 0 10%;
+  margin: 0 0 0 1%;
   ${font.H2};
 `;
 

@@ -13,10 +13,12 @@ function HomePage() {
   return (
     <S.HomePageLayOut>
       <S.HomePageHeader>
-        <S.HomePageTitle>Team. INSERT</S.HomePageTitle>
-        <S.HomePageSubTitle>
-          안녕하시와요일단멋진말넣기전에...
-        </S.HomePageSubTitle>
+        <S.HomePageTitle>
+          Team. INSERT{" "}
+          <S.HomePageSubTitle>
+            안녕하시와요일단멋진말넣기전에...
+          </S.HomePageSubTitle>
+        </S.HomePageTitle>
         <S.HomePageLogo src={Logo} />
         <S.HomePageHr />
       </S.HomePageHeader>
