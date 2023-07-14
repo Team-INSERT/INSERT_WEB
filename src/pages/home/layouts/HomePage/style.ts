@@ -38,9 +38,7 @@ export const HomePageSubTitle = styled.p`
 
 export const HomePageHr = styled.div`
   display: flex;
-  width: 1230px;
-  height: 2px;
-  background-color: #d9d9d9;
+  border-bottom: 2px solid #d9d9d9;
   margin: 1% 0 0 10%;
 `;
 
