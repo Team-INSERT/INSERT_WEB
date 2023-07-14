@@ -3,7 +3,6 @@ import { font } from "../../../../styles/font";
 import color from "../../../../styles/color";
 
 export const HomePageLayOut = styled.div`
-  color: ${color.white};
   display: flex;
   flex-direction: column;
   background-color: ${color.white};
@@ -41,95 +40,48 @@ export const HomePageHr = styled.div`
   border-bottom: 2px solid #d9d9d9;
   margin: 1% 0 0 10%;
 `;
-
-export const HomePageCodeSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 5% 0 0 10%;
-`;
-
-export const HomePageCodeText = styled.p`
-  color: ${color.text};
-  display: flex;
-  font-size: 22px;
-  font-weight: 600;
-`;
-
-export const HomePageCode = styled.p`
-  color: ${color.black};
-  font-size: 54px;
-  font-weight: 700;
-  display: flex;
-`;
-
-export const HomePageWatchSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 5% 0 0 10%;
-`;
-
-export const HomePageWatchText = styled.p`
-  color: ${color.text};
-  display: flex;
-  font-size: 22px;
-  font-weight: 600;
-`;
-
-export const HomePageWatch = styled.p`
-  color: ${color.black};
-  font-size: 54px;
-  font-weight: 700;
-  display: flex;
-`;
-
 export const HomePageMiddle = styled.div`
   display: flex;
+  margin-top: 3%;
+`;
+
+export const HomePageMiddle1 = styled.div`
+  display: flex;
+  color: ${color.black};
+  margin: 2% 0 0 10%;
+`;
+
+export const Title = styled.p`
+  display: flex;
+  ${font.H2};
+  color: ${color.text};
+  margin: 3% 0% 0 0;
+`;
+
+export const Value = styled.p`
+  display: flex;
+  ${font.D2};
+  margin: 0 0 5% 0;
 `;
 
 export const HomePageMiddle2 = styled.div`
   display: flex;
-`;
-
-export const HomePageCommitSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 7% 0 0 10%;
-`;
-
-export const HomePageCommitText = styled.p`
-  color: ${color.text};
-  display: flex;
-  font-size: 22px;
-  font-weight: 600;
-`;
-
-export const HomePageCommit = styled.p`
   color: ${color.black};
-  font-size: 54px;
-  font-weight: 700;
-  display: flex;
+  margin: 2% 0 0 10%;
 `;
 
-export const HomePageTimeSection = styled.div`
+export const Title2 = styled.p`
   display: flex;
-  flex-direction: column;
-  margin: 7% 0 0 14%;
-`;
-
-export const HomePageTime = styled.p`
-  color: ${color.black};
-  font-size: 54px;
-  font-weight: 700;
-  display: flex;
-`;
-
-export const HomePageTimeText = styled.p`
+  ${font.H2};
   color: ${color.text};
-  display: flex;
-  font-size: 22px;
-  font-weight: 600;
+  margin: 3% 0 0 10%;
 `;
 
+export const Value2 = styled.p`
+  display: flex;
+  ${font.D2};
+  margin: 0 0 5% 10%;
+`;
 export const HomePageFooter = styled.p`
   color: ${color.text};
   font-size: 15px;

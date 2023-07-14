@@ -3,18 +3,17 @@ import Logo from "src/assets/logo.svg";
 import * as S from "./style";
 
 function HomePage() {
-  const { team, code, watch, commit, time } = {
-    team: "Team. INSERT",
-    code: "168,257+",
-    watch: "560,257+",
-    commit: "2,358+",
-    time: "2,650+",
-  };
+  const middle = [
+    { id: 1, title: "작성한 코드 라인", value: "168,257+" },
+    { id: 2, title: "웹 페이지 조회수", value: "560,257+" },
+    { id: 3, title: "총 커밋 횟수", value: "2,358+" },
+    { id: 4, title: "함께한 시간", value: "2,650+" },
+  ];
 
   return (
     <S.HomePageLayOut>
       <S.HomePageHeader>
-        <S.HomePageTitle>{team}</S.HomePageTitle>
+        <S.HomePageTitle>Team. INSERT</S.HomePageTitle>
         <S.HomePageSubTitle>
           안녕하시와요일단멋진말넣기전에...
         </S.HomePageSubTitle>
@@ -22,25 +21,37 @@ function HomePage() {
         <S.HomePageHr />
       </S.HomePageHeader>
       <S.HomePageMiddle>
-        <S.HomePageCodeSection>
-          <S.HomePageCodeText>작성한 코드 라인</S.HomePageCodeText>
-          <S.HomePageCode>{code}</S.HomePageCode>
-        </S.HomePageCodeSection>
-        <S.HomePageWatchSection>
-          <S.HomePageWatchText>웹 페이지 조회수</S.HomePageWatchText>
-          <S.HomePageWatch>{watch}</S.HomePageWatch>
-        </S.HomePageWatchSection>
+        <S.HomePageMiddle1>
+          <div>
+            {middle.map((item, index) => {
+              if (index % 2 === 0) {
+                return (
+                  <div>
+                    <S.Title>{item.title}</S.Title>
+                    <S.Value>{item.value}</S.Value>
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </div>
+        </S.HomePageMiddle1>
+        <S.HomePageMiddle2>
+          <div>
+            {middle.map((item, index) => {
+              if (index % 2 === 1) {
+                return (
+                  <div>
+                    <S.Title2>{item.title}</S.Title2>
+                    <S.Value2>{item.value}</S.Value2>
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </div>
+        </S.HomePageMiddle2>
       </S.HomePageMiddle>
-      <S.HomePageMiddle2>
-        <S.HomePageCommitSection>
-          <S.HomePageCommitText>총 커밋 횟수</S.HomePageCommitText>
-          <S.HomePageCommit>{commit}</S.HomePageCommit>
-        </S.HomePageCommitSection>
-        <S.HomePageTimeSection>
-          <S.HomePageTimeText>함께한 시간</S.HomePageTimeText>
-          <S.HomePageTime>{time}</S.HomePageTime>
-        </S.HomePageTimeSection>
-      </S.HomePageMiddle2>
       <S.HomePageFooter>2023년 6월 기준</S.HomePageFooter>
     </S.HomePageLayOut>
   );
