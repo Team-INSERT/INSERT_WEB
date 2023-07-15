@@ -3,7 +3,7 @@ import { font } from "src/styles/font";
 import color from "src/styles/color";
 
 export const HistoryLayout = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 45.5vw;
   display: flex;
   align-items: center;
