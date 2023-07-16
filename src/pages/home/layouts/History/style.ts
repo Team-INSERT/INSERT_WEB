@@ -20,7 +20,7 @@ export const HistoryContainer = styled.div`
 export const HistoryText = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 2%;
+  margin-top: 1%;
 `;
 
 export const HistoryTitle = styled.h1`
@@ -37,12 +37,21 @@ export const HistoryIntroduce = styled.div`
   margin-left: auto;
   margin-top: 1.5%;
   ${font.H5};
-  color: ${color.black};
+  color: ${color.text};
+`;
+
+export const HistoryIntroduce1 = styled.div`
+  margin-left: auto;
+`;
+
+export const HistoryIntroduce2 = styled.div`
+  margin-left: auto;
+  margin-top: 0.5%;
 `;
 
 export const HistoryImg = styled.img`
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 6%;
+  margin-top: 5%;
 `;
