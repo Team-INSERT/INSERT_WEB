@@ -4,9 +4,9 @@ import * as S from "./style";
 function TimeLine() {
   const dates = ["2023", "2024", "2025", "2026", "2027"];
 
-  const [ClickedDate, setClickedDate] = useState("2023");
+  const [clickedDate, setClickedDate] = useState("2023");
 
-  const DateClick = (date: string) => {
+  const handleDateClick = (date: string) => {
     setClickedDate(date);
   };
 
@@ -18,7 +18,7 @@ function TimeLine() {
         <S.TimeLine>
           {dates.map((date) => (
             <S.TimeLineItem key={date}>
-              <S.TimeLineDate onClick={() => DateClick(date)}>
+              <S.TimeLineDate onClick={() => handleDateClick(date)}>
                 {date}
               </S.TimeLineDate>
               <S.TimeLineO />
@@ -26,9 +26,9 @@ function TimeLine() {
           ))}
         </S.TimeLine>
         <S.TimeLineHr />
-        {ClickedDate && (
+        {clickedDate && (
           <S.TimeLineText>
-            {ClickedDate === "2023" && (
+            {clickedDate === "2023" && (
               <S.TimeLineYear>
                 <S.TimeLineContentDate>2023.03</S.TimeLineContentDate>
                 <S.TimeLineContent>
@@ -36,25 +36,25 @@ function TimeLine() {
                 </S.TimeLineContent>
               </S.TimeLineYear>
             )}
-            {ClickedDate === "2024" && (
+            {clickedDate === "2024" && (
               <S.TimeLineYear>
                 <S.TimeLineContentDate>2024</S.TimeLineContentDate>
                 <S.TimeLineContent>텅~</S.TimeLineContent>
               </S.TimeLineYear>
             )}
-            {ClickedDate === "2025" && (
+            {clickedDate === "2025" && (
               <S.TimeLineYear>
                 <S.TimeLineContentDate>2025</S.TimeLineContentDate>
                 <S.TimeLineContent>텅~</S.TimeLineContent>
               </S.TimeLineYear>
             )}
-            {ClickedDate === "2026" && (
+            {clickedDate === "2026" && (
               <S.TimeLineYear>
                 <S.TimeLineContentDate>2026</S.TimeLineContentDate>
                 <S.TimeLineContent>텅~</S.TimeLineContent>
               </S.TimeLineYear>
             )}
-            {ClickedDate === "2027" && (
+            {clickedDate === "2027" && (
               <S.TimeLineYear>
                 <S.TimeLineContentDate>2027</S.TimeLineContentDate>
                 <S.TimeLineContent>텅~</S.TimeLineContent>
