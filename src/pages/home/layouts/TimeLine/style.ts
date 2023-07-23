@@ -24,10 +24,19 @@ export const SubTitle = styled.p`
 export const TimeLineBox = styled.div`
   display: flex;
 `;
+
 export const TimeLine = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 11% 0 8% 150%;
+    border-right: 4px solid black;
+  }
 `;
 
 export const TimeLineO = styled.div`
@@ -36,13 +45,9 @@ export const TimeLineO = styled.div`
   height: 18px;
   background: black;
   border-radius: 50%;
-  margin: 4.4% 0 0 5.5%;
+  margin: 100% 0 0 142%;
 `;
 
-export const TimeLineHr = styled.div`
-  border-left: 4px solid black;
-  margin: 6% 0 5% 1.75%;
-`;
 export const TimeLineItem = styled.div`
   display: flex;
 `;

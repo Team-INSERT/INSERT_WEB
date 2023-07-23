@@ -25,7 +25,6 @@ function TimeLine() {
             </S.TimeLineItem>
           ))}
         </S.TimeLine>
-        <S.TimeLineHr />
         {clickedDate && (
           <S.TimeLineText>
             {clickedDate === "2023" && (
