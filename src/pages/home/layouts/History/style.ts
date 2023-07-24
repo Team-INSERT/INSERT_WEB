@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { font } from "src/styles/font";
-import color from "src/styles/color";
+import { font } from "styles/font";
+import color from "styles/color";
 
 export const HistoryLayout = styled.div`
   width: 100%;

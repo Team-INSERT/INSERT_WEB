@@ -1,4 +1,3 @@
-import React from "react";
 import * as S from "./style";
 import Logo from "../../assets/logo.svg";
 
