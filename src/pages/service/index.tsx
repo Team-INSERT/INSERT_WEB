@@ -1,36 +1,28 @@
-import BSM from "assets/BSM.svg";
-import bumawiki from "assets/bumawiki.svg";
-import BSSMportfolio from "assets/BSSMportfolio.svg";
-import ubin from "assets/ubin.svg";
-import sewon from "assets/sewon.svg";
-import hyunjun from "assets/hyunjun.svg";
-import jacobhboy from "assets/jacobhboy.svg";
-import hohyun from "assets/hohyun.svg";
-import jimin from "assets/jimin.svg";
+import * as I from "assets";
 import * as S from "./style";
 
 function Service() {
   const projects = [
     {
-      logo: BSM,
+      logo: I.BSM,
       direction: "left",
       title: "BSM",
       subtitle: "기술스택 : Next.JS, TypeScript",
-      contributor: [ubin, sewon, hyunjun, jacobhboy, hohyun],
+      contributor: [I.ubin, I.sewon, I.hyunjun, I.jacobhboy, I.hohyun],
     },
     {
-      logo: bumawiki,
+      logo: I.bumawiki,
       direction: "right",
       title: "부마위키",
       subtitle: "기술스택 : Next.JS, TypeScript",
-      contributor: [ubin, sewon, jacobhboy, hohyun],
+      contributor: [I.ubin, I.sewon, I.jacobhboy, I.hohyun],
     },
     {
-      logo: BSSMportfolio,
+      logo: I.BSSMportfolio,
       direction: "left",
       title: "포토폴리오 사이트다",
       subtitle: "기술스택 : Next.JS, TypeScript",
-      contributor: [jimin],
+      contributor: [I.jimin],
     },
   ];
 
