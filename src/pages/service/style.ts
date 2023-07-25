@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { font } from "styles/font";
 import color from "styles/color";
 
@@ -32,7 +32,13 @@ export const ProjectLayout = styled.div`
 export const ProjectLogo = styled.img<{ direction: string }>`
   width: 35rem;
   ${(props) =>
-    props.direction === "left" ? "margin-right: 2rem" : "margin-left: 17.5rem"}
+    props.direction === "left"
+      ? css`
+          margin-right: 2rem;
+        `
+      : css`
+          margin-left: 17.5rem;
+        `}
 `;
 
 export const ProjectTitle = styled.div`
