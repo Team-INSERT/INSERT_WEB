@@ -43,9 +43,9 @@ function Service() {
       </S.SubTitle>
       {projects.map((project) => (
         <S.ProjectLayout>
-          {project.direction === "left" ? (
+          {project.direction === "left" && (
             <S.ProjectLogo src={project.logo} direction={project.direction} />
-          ) : null}
+          )}
           <S.ProjectContentsLayout>
             <S.ProjectTitle>{project.title}</S.ProjectTitle>
             <S.ProjectSubTitle margin>{project.subtitle}</S.ProjectSubTitle>
@@ -56,9 +56,9 @@ function Service() {
               ))}
             </S.Contributors>
           </S.ProjectContentsLayout>
-          {project.direction === "right" ? (
+          {project.direction === "right" && (
             <S.ProjectLogo src={project.logo} direction={project.direction} />
-          ) : null}
+          )}
         </S.ProjectLayout>
       ))}
     </S.Container>
