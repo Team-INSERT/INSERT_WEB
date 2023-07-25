@@ -42,27 +42,24 @@ function Service() {
         대추우랒두ㅏ허ㅜㅏ후ㅏㅣㅁ뤼ㅏ무나ㅣ뮈ㅜㅏㅣ뮈ㅏ
       </S.SubTitle>
       {projects.map((project) => (
-        <>
-          <S.ProjectLayout>
-            {project.direction === "left" ? (
-              <S.ProjectLogo src={project.logo} direction={project.direction} />
-            ) : null}
-            <S.ProjectContentsLayout>
-              <S.ProjectTitle>{project.title}</S.ProjectTitle>
-              <S.ProjectSubTitle margin>{project.subtitle}</S.ProjectSubTitle>
-              <S.ProjectSubTitle margin={false}>Contributors</S.ProjectSubTitle>
-              <S.Contributors>
-                {project.contributor.map((contributor) => (
-                  <S.Contributor src={contributor} />
-                ))}
-              </S.Contributors>
-            </S.ProjectContentsLayout>
-            {project.direction === "right" ? (
-              <S.ProjectLogo src={project.logo} direction={project.direction} />
-            ) : null}
-          </S.ProjectLayout>
-          <S.ProjectDivider />
-        </>
+        <S.ProjectLayout>
+          {project.direction === "left" ? (
+            <S.ProjectLogo src={project.logo} direction={project.direction} />
+          ) : null}
+          <S.ProjectContentsLayout>
+            <S.ProjectTitle>{project.title}</S.ProjectTitle>
+            <S.ProjectSubTitle margin>{project.subtitle}</S.ProjectSubTitle>
+            <S.ProjectSubTitle margin={false}>Contributors</S.ProjectSubTitle>
+            <S.Contributors>
+              {project.contributor.map((contributor) => (
+                <S.Contributor src={contributor} />
+              ))}
+            </S.Contributors>
+          </S.ProjectContentsLayout>
+          {project.direction === "right" ? (
+            <S.ProjectLogo src={project.logo} direction={project.direction} />
+          ) : null}
+        </S.ProjectLayout>
       ))}
     </S.Container>
   );

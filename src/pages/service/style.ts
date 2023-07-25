@@ -5,7 +5,7 @@ import color from "styles/color";
 export const Container = styled.div`
   max-width: 100%;
   display: flex;
-  margin: 0 7.5% 0 10%;
+  margin: 0 7.5% 5% 10%;
   flex-direction: column;
 `;
 
@@ -25,6 +25,8 @@ export const SubTitle = styled.div`
 
 export const ProjectLayout = styled.div`
   display: flex;
+  border-bottom: 2px solid #d9d9d9;
+  padding: 3rem 0;
 `;
 
 export const ProjectLogo = styled.img<{ direction: string }>`
@@ -57,10 +59,4 @@ export const Contributors = styled.div`
 export const Contributor = styled.img`
   width: 2.5rem;
   margin-right: 0.5rem;
-`;
-
-export const ProjectDivider = styled.div`
-  width: 100%;
-  border-bottom: 2px solid #d9d9d9;
-  margin: 2.5rem 0;
 `;
