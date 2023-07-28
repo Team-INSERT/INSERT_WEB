@@ -46,10 +46,12 @@ export const ProjectTitle = styled.div`
   margin-bottom: 0.5rem;
 `;
 
-export const ProjectSubTitle = styled.div<{ margin: boolean }>`
+export const ProjectSubTitle = styled.div`
   ${font.H5}
   color: ${color.text};
-  ${(props) => props.margin && "margin-bottom: 7.5rem"}
+  &:first-child {
+    margin-bottom: 7.5rem;
+  }
 `;
 
 export const ProjectContentsLayout = styled.div`

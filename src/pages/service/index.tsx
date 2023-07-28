@@ -40,8 +40,8 @@ function Service() {
           )}
           <S.ProjectContentsLayout>
             <S.ProjectTitle>{project.title}</S.ProjectTitle>
-            <S.ProjectSubTitle margin>{project.subtitle}</S.ProjectSubTitle>
-            <S.ProjectSubTitle margin={false}>Contributors</S.ProjectSubTitle>
+            <S.ProjectSubTitle>{project.subtitle}</S.ProjectSubTitle>
+            <S.ProjectSubTitle>Contributors</S.ProjectSubTitle>
             <S.Contributors>
               {project.contributor.map((contributor) => (
                 <S.Contributor src={contributor} />
