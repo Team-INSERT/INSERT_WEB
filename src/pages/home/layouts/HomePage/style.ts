@@ -11,31 +11,27 @@ export const HomePageLayOut = styled.div`
 export const HomePageLogo = styled.img`
   width: 101.464px;
   height: 94.953px;
-  margin: 4% 0 0 10%;
+  margin: 4% 0 0 30%;
 `;
 
 export const HomePageHeader = styled.div`
   display: flex;
+  border-bottom: 2px solid #d9d9d9;
+  margin: 2% 10% 0 10%;
 `;
 
 export const HomePageTitle = styled.h1`
   color: ${color.black};
   ${font.D1};
-  margin: 3% 0 0 10%;
+  margin: 3% 0 2% 0;
 `;
 
 export const HomePageSubTitle = styled.p`
   display: flex;
   width: 800px;
   color: ${color.black};
-  margin: 0 0 0 1%;
+  margin: 2% 0 0 1%;
   ${font.H2};
-`;
-
-export const HomePageHr = styled.div`
-  display: flex;
-  border-bottom: 2px solid #d9d9d9;
-  margin: 1% 0 0 10%;
 `;
 export const HomePageMiddle = styled.div`
   display: flex;

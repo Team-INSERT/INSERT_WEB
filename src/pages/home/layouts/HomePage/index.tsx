@@ -19,7 +19,6 @@ function HomePage() {
           </S.HomePageSubTitle>
         </S.HomePageTitle>
         <S.HomePageLogo src={Logo} />
-        <S.HomePageHr />
       </S.HomePageHeader>
       <S.HomePageMiddle>
         <S.HomePageMiddle1>
