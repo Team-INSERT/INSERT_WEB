@@ -5,6 +5,7 @@ const color = {
   content: "#D9D9D9",
   tertiary: "#303441",
   text: "#797979",
+  gray: "#7B7B7B",
 };
 
 export default color;
