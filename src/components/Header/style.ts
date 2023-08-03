@@ -5,7 +5,7 @@ import { font } from "../../styles/font";
 
 export const HeaderLayout = styled.header`
   width: 100%;
-  height: 48px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,12 +26,12 @@ export const HeaderSymbol = styled.div`
 `;
 
 export const HeaderLogo = styled.img`
-  width: 26px;
-  height: 26px;
+  width: 33px;
+  height: 33px;
 `;
 
 export const HeaderTitle = styled.h1`
-  ${font.H5};
+  ${font.H3};
 
   &:after {
     content: "INSERT";
@@ -40,12 +40,12 @@ export const HeaderTitle = styled.h1`
 
 export const HeaderNavigation = styled.nav`
   display: flex;
-  gap: 24px;
+  gap: 30px;
   margin-left: auto;
 `;
 
 export const HeaderNavigationItem = styled(Link)`
-  ${font.p3};
+  ${font.p2};
   text-decoration: none;
   color: ${color.black};
 `;
