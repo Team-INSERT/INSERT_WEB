@@ -8,7 +8,7 @@ function Member() {
       name: "정동겸",
       generation: 1,
       subGeneration: "st",
-      tech: ["Frontend Developer"],
+      tech: "Frontend Developer",
       github_url: "https://github.com/jeongdonggyeom",
       github_img_url: "https://avatars.githubusercontent.com/u/80656788?v=4",
     },
@@ -17,7 +17,7 @@ function Member() {
       name: "정승민",
       generation: 1,
       subGeneration: "st",
-      tech: ["Frontend Developer"],
+      tech: "Frontend Developer",
       github_url: "https://github.com/jsm8109jsm",
       github_img_url: "https://avatars.githubusercontent.com/u/105054567?v=4",
     },
@@ -26,7 +26,7 @@ function Member() {
       name: "홍지민",
       generation: 1,
       subGeneration: "st",
-      tech: ["Frontend Developer"],
+      tech: "Frontend Developer",
       github_url: "https://github.com/J1min",
       github_img_url: "https://avatars.githubusercontent.com/u/80014454?v=4",
     },
@@ -35,7 +35,7 @@ function Member() {
       name: "김영민",
       generation: 1,
       subGeneration: "st",
-      tech: ["Backend Developer"],
+      tech: "Backend Developer",
       github_url: "https://github.com/min050410",
       github_img_url: "https://avatars.githubusercontent.com/u/45661217?v=4",
     },
@@ -44,7 +44,7 @@ function Member() {
       name: "이현준",
       generation: 1,
       subGeneration: "st",
-      tech: ["Backend Developer"],
+      tech: "Backend Developer",
       github_url: "https://github.com/leehj050211",
       github_img_url: "https://avatars.githubusercontent.com/u/80656849?v=4",
     },
@@ -53,7 +53,7 @@ function Member() {
       name: "권세원",
       generation: 2,
       subGeneration: "nd",
-      tech: ["Frontend Developer"],
+      tech: "Frontend Developer",
       github_url: "https://github.com/5ewon",
       github_img_url: "https://avatars.githubusercontent.com/u/101105694?v=4",
     },
@@ -61,7 +61,7 @@ function Member() {
       memberId: 7,
       name: "박우빈",
       generation: 2,
-      tech: ["Frontend Developer"],
+      tech: "Frontend Developer",
       subGeneration: "nd",
       github_url: "https://github.com/Ubinquitous",
       github_img_url: "https://avatars.githubusercontent.com/u/102154880?v=4",
@@ -71,7 +71,7 @@ function Member() {
       name: "김호현",
       generation: 2,
       subGeneration: "nd",
-      tech: ["Backend Developer"],
+      tech: "Backend Developer",
       github_url: "https://github.com/qlido",
       github_img_url: "https://avatars.githubusercontent.com/u/67864410?v=4",
     },
@@ -80,7 +80,7 @@ function Member() {
       name: "이창보",
       generation: 2,
       subGeneration: "nd",
-      tech: ["Backend Developer"],
+      tech: "Backend Developer",
       github_url: "https://github.com/jacobhboy",
       github_img_url: "https://avatars.githubusercontent.com/u/101192100?v=4",
     },
@@ -89,7 +89,7 @@ function Member() {
       name: "김시연",
       generation: 3,
       subGeneration: "rd",
-      tech: ["Fronted Developer"],
+      tech: "Frontend Developer",
       github_url: "https://github.com/kimsiyeon0223",
       github_img_url: "https://avatars.githubusercontent.com/u/128461588?v=4",
     },
@@ -98,7 +98,7 @@ function Member() {
       name: "김영은",
       generation: 3,
       subGeneration: "rd",
-      tech: ["Fronted Developer"],
+      tech: "Frontend Developer",
       github_url: "https://github.com/zeroeuni",
       github_img_url: "https://avatars.githubusercontent.com/u/128370837?v=4",
     },
@@ -107,7 +107,7 @@ function Member() {
       name: "전영현",
       generation: 3,
       subGeneration: "rd",
-      tech: ["Fronted Developer"],
+      tech: "Frontend Developer",
       github_url: "https://github.com/jyh071116",
       github_img_url: "https://avatars.githubusercontent.com/u/128202921?v=4",
     },
@@ -116,7 +116,7 @@ function Member() {
       name: "강지원",
       generation: 3,
       subGeneration: "rd",
-      tech: ["Backend Developer"],
+      tech: "Backend Developer",
       github_url: "https://github.com/J1W0N-1209",
       github_img_url: "https://avatars.githubusercontent.com/u/113921639?v=4",
     },
@@ -125,7 +125,7 @@ function Member() {
       name: "오윤찬",
       generation: 3,
       subGeneration: "rd",
-      tech: ["Backend Developer"],
+      tech: "Backend Developer",
       github_url: "https://github.com/YunChan-Oh",
       github_img_url: "https://avatars.githubusercontent.com/u/91408117?v=4",
     },
@@ -134,13 +134,14 @@ function Member() {
       name: "전유진",
       generation: 3,
       subGeneration: "rd",
-      tech: ["Backend Developer"],
+      tech: "Backend Developer",
       github_url: "https://github.com/jyj1289",
       github_img_url: "https://avatars.githubusercontent.com/u/121763556?v=4",
     },
   ];
 
   const [currentGeneration, setCurrentGeneration] = useState(1);
+  const [currenttTech, setCurrrentTech] = useState("");
 
   return (
     <S.MemberLayout>
@@ -149,6 +150,25 @@ function Member() {
         <S.MemberHr />
         <S.MemberMain>
           <S.MemberGrade>
+            <S.GradeTitle>Tech</S.GradeTitle>
+            <S.GradeButton>
+              <S.GradeButton1
+                onClick={() => setCurrrentTech("Frontend Developer")}
+              >
+                Frontend
+              </S.GradeButton1>
+              <S.GradeButton2
+                onClick={() => setCurrrentTech("Backend Developer")}
+              >
+                Backend
+              </S.GradeButton2>
+              <S.GradeButton3 onClick={() => setCurrrentTech("DevOps")}>
+                DevOps
+              </S.GradeButton3>
+              <S.GradeButton4 onClick={() => setCurrrentTech("Design")}>
+                Design
+              </S.GradeButton4>
+            </S.GradeButton>
             <S.GradeTitle>Grade</S.GradeTitle>
             <S.GradeButton>
               <S.GradeButton1 onClick={() => setCurrentGeneration(1)}>
@@ -171,24 +191,25 @@ function Member() {
           <S.Member>
             {IntroMember.map((member, memberId) => (
               <S.MemberMiddle>
-                {member.generation === currentGeneration && (
-                  <S.MemberProfile key={memberId}>
-                    <a
-                      href={member.github_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <S.Profile src={member.github_img_url} />
-                    </a>
-                    <S.Information>
-                      <S.Name>{member.name}</S.Name>
-                      <S.Role>
-                        {member.generation}
-                        {member.subGeneration} | {member.tech}
-                      </S.Role>
-                    </S.Information>
-                  </S.MemberProfile>
-                )}
+                {member.generation === currentGeneration ||
+                  (member.tech === currenttTech && (
+                    <S.MemberProfile key={memberId}>
+                      <a
+                        href={member.github_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <S.Profile src={member.github_img_url} />
+                      </a>
+                      <S.Information>
+                        <S.Name>{member.name}</S.Name>
+                        <S.Role>
+                          {member.generation}
+                          {member.subGeneration} | {member.tech}
+                        </S.Role>
+                      </S.Information>
+                    </S.MemberProfile>
+                  ))}
               </S.MemberMiddle>
             ))}
           </S.Member>
