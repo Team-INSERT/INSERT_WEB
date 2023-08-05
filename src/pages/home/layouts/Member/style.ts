@@ -7,11 +7,13 @@ export const MemberLayout = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 `;
 
 export const MemberContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   padding: 0 10% 0 10%;
 `;
 
@@ -128,24 +130,17 @@ export const MemberProfile = styled.div`
   }
 `;
 
-export const Profile = styled.img<{ generation: number }>`
+export const Profile = styled.img`
   display: flex;
   text-align: center;
-  width: 280px;
-  height: 310px;
-  ${(props) =>
-    props.generation === 2
-      ? css`
-          margin-left: 1rem;
-        `
-      : css`
-          margin-left: 0.3%;
-        `}
+  width: 16vw;
+  height: 18vw;
 `;
 
 export const Information = styled.div`
   display: flex;
   align-items: center;
+  margin-right: auto;
 `;
 
 export const Name = styled.div`

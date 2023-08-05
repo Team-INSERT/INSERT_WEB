@@ -178,10 +178,7 @@ function Member() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <S.Profile
-                        src={member.github_img_url}
-                        generation={member.generation}
-                      />
+                      <S.Profile src={member.github_img_url} />
                     </a>
                     <S.Information>
                       <S.Name>{member.name}</S.Name>
