@@ -169,110 +169,22 @@ function Member() {
             </S.GradeButton>
           </S.MemberGrade>
           <S.Member>
-            <S.MemberMiddle>
-              <S.Profile1>
-                {currentGrade === "1st" &&
-                  FMembers.map((item, index) => {
-                    if (index % 2 === 0) {
-                      return (
-                        <S.MemberProfileF>
-                          <S.Profile>{item.img}</S.Profile>
-                          <S.Information>
-                            <S.Name>{item.name}</S.Name>
-                            <S.Role>{item.role}</S.Role>
-                          </S.Information>
-                        </S.MemberProfileF>
-                      );
-                    }
-                    return null;
-                  })}
-              </S.Profile1>
-              <S.Profile2>
-                {currentGrade === "1st" &&
-                  FMembers.map((item, index) => {
-                    if (index % 2 === 1) {
-                      return (
-                        <S.MemberProfileB>
-                          <S.Profile>{item.img}</S.Profile>
-                          <S.Information>
-                            <S.Name>{item.name}</S.Name>
-                            <S.Role>{item.role}</S.Role>
-                          </S.Information>
-                        </S.MemberProfileB>
-                      );
-                    }
-                    return null;
-                  })}
-              </S.Profile2>
-              <S.Profile1>
-                {currentGrade === "2nd" &&
-                  SMembers.map((item, index) => {
-                    if (index % 2 === 0) {
-                      return (
-                        <S.MemberProfileF>
-                          <S.Profile>{item.img}</S.Profile>
-                          <S.Information>
-                            <S.Name>{item.name}</S.Name>
-                            <S.Role>{item.role}</S.Role>
-                          </S.Information>
-                        </S.MemberProfileF>
-                      );
-                    }
-                    return null;
-                  })}
-              </S.Profile1>
-              <S.Profile2>
-                {currentGrade === "2nd" &&
-                  SMembers.map((item, index) => {
-                    if (index % 2 === 1) {
-                      return (
-                        <S.MemberProfileB>
-                          <S.Profile>{item.img}</S.Profile>
-                          <S.Information>
-                            <S.Name>{item.name}</S.Name>
-                            <S.Role>{item.role}</S.Role>
-                          </S.Information>
-                        </S.MemberProfileB>
-                      );
-                    }
-                    return null;
-                  })}
-              </S.Profile2>
-              <S.Profile1>
-                {currentGrade === "3rd" &&
-                  TMembers.map((item, index) => {
-                    if (index % 2 === 0) {
-                      return (
-                        <S.MemberProfileF>
-                          <S.Profile>{item.img}</S.Profile>
-                          <S.Information>
-                            <S.Name>{item.name}</S.Name>
-                            <S.Role>{item.role}</S.Role>
-                          </S.Information>
-                        </S.MemberProfileF>
-                      );
-                    }
-                    return null;
-                  })}
-              </S.Profile1>
-              <S.Profile2>
-                {currentGrade === "3rd" &&
-                  TMembers.map((item, index) => {
-                    if (index % 2 === 1) {
-                      return (
-                        <S.MemberProfileB>
-                          <S.Profile>{item.img}</S.Profile>
-                          <S.Information>
-                            <S.Name>{item.name}</S.Name>
-                            <S.Role>{item.role}</S.Role>
-                          </S.Information>
-                        </S.MemberProfileB>
-                      );
-                    }
-                    return null;
-                  })}
-              </S.Profile2>
-            </S.MemberMiddle>
+            {IntroMember.map((member, memberId) => (
+              <S.MemberMiddle>
+                {member.generation === currentGeneration && (
+                  <S.MemberProfile key={memberId}>
+                    <S.Profile src={member.github_img_url} />
+                    <S.Information>
+                      <S.Name>{member.name}</S.Name>
+                      <S.Role>
+                        {member.generation}
+                        {member.subGeneration} | {member.tech}
+                      </S.Role>
+                    </S.Information>
+                  </S.MemberProfile>
+                )}
+              </S.MemberMiddle>
+            ))}
           </S.Member>
         </S.MemberMain>
       </S.MemberContainer>
