@@ -56,6 +56,7 @@ export const GradeButton1 = styled.a`
   &:hover {
     background-color: ${color.on_tertiary};
     border-radius: 5px;
+    cursor: pointer;
   }
 `;
 
@@ -67,6 +68,7 @@ export const GradeButton2 = styled.a`
   &:hover {
     background-color: ${color.on_tertiary};
     border-radius: 5px;
+    cursor: pointer;
   }
 `;
 
@@ -78,6 +80,7 @@ export const GradeButton3 = styled.a`
   &:hover {
     background-color: ${color.on_tertiary};
     border-radius: 5px;
+    cursor: pointer;
   }
 `;
 export const GradeButton4 = styled.a`
@@ -88,6 +91,7 @@ export const GradeButton4 = styled.a`
   &:hover {
     background-color: ${color.on_tertiary};
     border-radius: 5px;
+    cursor: pointer;
   }
 `;
 
@@ -99,6 +103,7 @@ export const GradeButton5 = styled.a`
   &:hover {
     background-color: ${color.on_tertiary};
     border-radius: 5px;
+    cursor: pointer;
   }
 `;
 
