@@ -1,10 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { font } from "styles/font";
 import color from "styles/color";
 
 export const MemberLayout = styled.div`
-  width: 100%;
-  height: 45.5vw;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,180 +12,138 @@ export const MemberLayout = styled.div`
 export const MemberContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 95%;
+  padding: 0 10% 0 10%;
 `;
 
 export const MemberTitle = styled.div`
-  height: 11%;
-  ${font.H1};
+  padding: 0 0 1% 0;
+  ${font.D2};
+  letter-spacing: -2px;
   color: ${color.black};
 `;
 
 export const MemberHr = styled.div`
+  display: flex;
   border-bottom: 2px solid #d9d9d9;
 `;
 
 export const MemberMain = styled.div`
   display: flex;
   width: 100%;
-  height: 85%;
 `;
 
 export const MemberGrade = styled.div`
   display: flex;
   flex-direction: column;
-  width: 20%;
+  padding: 7% 15% 0 0;
 `;
 
 export const GradeTitle = styled.div`
-  ${font.H4};
+  ${font.H2};
   color: ${color.black};
-  margin: 30% 0 0 13%;
-  width: 20%;
 `;
 
 export const GradeButton = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 40% 20% 0 0;
 `;
 
 export const GradeButton1 = styled.a`
-  width: 12%;
   text-align: center;
-  ${font.H6}
+  ${font.H4};
   color: ${color.gray};
-  margin: 11% 0 0 19%;
   &:hover {
     background-color: ${color.on_tertiary};
-    width: 12%;
     border-radius: 5px;
   }
 `;
 
 export const GradeButton2 = styled.a`
-  width: 12%;
   text-align: center;
-  ${font.H6};
+  ${font.H4};
+  margin-top: 40%;
   color: ${color.gray};
-  margin: 8% 0 0 19%;
   &:hover {
     background-color: ${color.on_tertiary};
-    width: 12%;
     border-radius: 5px;
   }
 `;
 
 export const GradeButton3 = styled.a`
-  width: 12%;
   text-align: center;
-  ${font.H6};
+  ${font.H4};
+  margin-top: 40%;
   color: ${color.gray};
-  margin: 8% 0 0 19%;
   &:hover {
     background-color: ${color.on_tertiary};
-    width: 12%;
     border-radius: 5px;
   }
 `;
 
 export const GradeButton4 = styled.a`
-  width: 12%;
   text-align: center;
-  ${font.H6};
+  ${font.H4};
+  margin-top: 40%;
   color: ${color.gray};
-  margin: 8% 0 0 19%;
   &:hover {
     background-color: ${color.on_tertiary};
-    width: 12%;
     border-radius: 5px;
   }
 `;
 
 export const GradeButton5 = styled.a`
-  width: 12%;
   text-align: center;
-  ${font.H6};
+  ${font.H4};
+  margin-top: 40%;
   color: ${color.gray};
-  margin: 8% 0 0 19%;
   &:hover {
     background-color: ${color.on_tertiary};
-    width: 12%;
     border-radius: 5px;
   }
 `;
 
 export const Member = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 80%;
-  height: 100%;
+  flex-wrap: wrap;
+  padding: 3% 0 10% 3%;
 `;
 
 export const MemberMiddle = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  flex-wrap: wrap;
 `;
 
-export const Profile = styled.div`
+export const MemberProfile = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 60px 20px;
+`;
+
+export const Profile = styled.img`
   display: flex;
   text-align: center;
+  width: 280px;
+  height: 310px;
 `;
 
 export const Information = styled.div`
   display: flex;
-  text-align: center;
+  align-items: center;
 `;
 
 export const Name = styled.div`
   display: flex;
-  align-items: center;
-  ${font.code};
+  ${font.H5};
   color: ${color.black};
-  margin-bottom: 0.2rem;
+  margin-top: 3%;
 `;
 
 export const Role = styled.div`
   display: flex;
-  align-items: center;
-  ${font.caption};
+  ${font.btn3};
   color: ${color.gray};
-  margin-left: 0.2rem;
-`;
-
-export const Profile1 = styled.div`
-  width: 90%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const Profile2 = styled.div`
-  width: 90%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const MemberProfileF = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 40%;
-  height: 90%;
-  margin-bottom: 1rem;
-`;
-
-export const MemberProfileB = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 40%;
-  height: 90%;
-  margin-bottom: 1rem;
+  margin-top: 3%;
+  margin-left: 0.4rem;
 `;
