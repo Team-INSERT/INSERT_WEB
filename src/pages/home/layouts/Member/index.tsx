@@ -141,7 +141,6 @@ function Member() {
   ];
 
   const [currentGeneration, setCurrentGeneration] = useState(1);
-  const [currenttTech, setCurrrentTech] = useState("");
 
   return (
     <S.MemberLayout>
@@ -150,25 +149,6 @@ function Member() {
         <S.MemberHr />
         <S.MemberMain>
           <S.MemberGrade>
-            <S.GradeTitle>Tech</S.GradeTitle>
-            <S.GradeButton>
-              <S.GradeButton1
-                onClick={() => setCurrrentTech("Frontend Developer")}
-              >
-                Frontend
-              </S.GradeButton1>
-              <S.GradeButton2
-                onClick={() => setCurrrentTech("Backend Developer")}
-              >
-                Backend
-              </S.GradeButton2>
-              <S.GradeButton3 onClick={() => setCurrrentTech("DevOps")}>
-                DevOps
-              </S.GradeButton3>
-              <S.GradeButton4 onClick={() => setCurrrentTech("Design")}>
-                Design
-              </S.GradeButton4>
-            </S.GradeButton>
             <S.GradeTitle>Grade</S.GradeTitle>
             <S.GradeButton>
               <S.GradeButton1 onClick={() => setCurrentGeneration(1)}>
@@ -191,25 +171,24 @@ function Member() {
           <S.Member>
             {IntroMember.map((member, memberId) => (
               <S.MemberMiddle>
-                {member.generation === currentGeneration ||
-                  (member.tech === currenttTech && (
-                    <S.MemberProfile key={memberId}>
-                      <a
-                        href={member.github_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <S.Profile src={member.github_img_url} />
-                      </a>
-                      <S.Information>
-                        <S.Name>{member.name}</S.Name>
-                        <S.Role>
-                          {member.generation}
-                          {member.subGeneration} | {member.tech}
-                        </S.Role>
-                      </S.Information>
-                    </S.MemberProfile>
-                  ))}
+                {member.generation === currentGeneration && (
+                  <S.MemberProfile key={memberId}>
+                    <a
+                      href={member.github_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <S.Profile src={member.github_img_url} />
+                    </a>
+                    <S.Information>
+                      <S.Name>{member.name}</S.Name>
+                      <S.Role>
+                        {member.generation}
+                        {member.subGeneration} | {member.tech}
+                      </S.Role>
+                    </S.Information>
+                  </S.MemberProfile>
+                )}
               </S.MemberMiddle>
             ))}
           </S.Member>
