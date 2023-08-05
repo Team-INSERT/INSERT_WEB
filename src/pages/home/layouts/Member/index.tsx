@@ -173,7 +173,16 @@ function Member() {
               <S.MemberMiddle>
                 {member.generation === currentGeneration && (
                   <S.MemberProfile key={memberId}>
-                    <S.Profile src={member.github_img_url} />
+                    <a
+                      href={member.github_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <S.Profile
+                        src={member.github_img_url}
+                        generation={member.generation}
+                      />
+                    </a>
                     <S.Information>
                       <S.Name>{member.name}</S.Name>
                       <S.Role>

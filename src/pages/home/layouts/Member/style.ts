@@ -80,7 +80,6 @@ export const GradeButton3 = styled.a`
     border-radius: 5px;
   }
 `;
-
 export const GradeButton4 = styled.a`
   text-align: center;
   ${font.H4};
@@ -119,13 +118,24 @@ export const MemberProfile = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 0 60px 20px;
+  & > a {
+    text-decoration: none;
+  }
 `;
 
-export const Profile = styled.img`
+export const Profile = styled.img<{ generation: number }>`
   display: flex;
   text-align: center;
   width: 280px;
   height: 310px;
+  ${(props) =>
+    props.generation === 2
+      ? css`
+          margin-left: 1rem;
+        `
+      : css`
+          margin-left: 0.3%;
+        `}
 `;
 
 export const Information = styled.div`
