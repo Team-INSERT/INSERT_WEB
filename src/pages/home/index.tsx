@@ -4,6 +4,7 @@ import History from "pages/home/layouts/History";
 import HomePage from "pages/home/layouts/HomePage";
 import Service from "pages/service";
 import TimeLine from "pages/home/layouts/TimeLine";
+import Member from "pages/home/layouts/Member";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <History />
       <Service />
       <TimeLine />
+      <Member />
       <Footer />
     </div>
   );
