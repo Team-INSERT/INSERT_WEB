@@ -17,7 +17,7 @@ function HistoryPage() {
             <S.HistoryIntroduce1>{introduce1}</S.HistoryIntroduce1>
             <S.HistoryIntroduce2>{introduce2}</S.HistoryIntroduce2>
           </S.HistoryIntroduce>
-          <S.HistoryImg src="imgs/school.webp" />
+          <S.HistoryImg src="images/school.webp" />
         </S.HistoryText>
       </S.HistoryContainer>
     </S.HistoryLayout>
