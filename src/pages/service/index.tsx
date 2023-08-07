@@ -5,6 +5,7 @@ function Service() {
   const projects = [
     {
       logo: I.BSM,
+      url: "https://bssm.kro.kr/",
       direction: "left",
       title: "BSM",
       subtitle: "기술스택 : Next.JS, TypeScript",
@@ -12,6 +13,7 @@ function Service() {
     },
     {
       logo: I.bumawiki,
+      url: "https://buma.wiki/",
       direction: "right",
       title: "부마위키",
       subtitle: "기술스택 : Next.JS, TypeScript",
@@ -19,6 +21,7 @@ function Service() {
     },
     {
       logo: I.BSSMportfolio,
+      url: "https://portfolio.bssm.io/",
       direction: "left",
       title: "포토폴리오 사이트다",
       subtitle: "기술스택 : Next.JS, TypeScript",
@@ -30,26 +33,30 @@ function Service() {
     <S.Container>
       <S.Title>사용할 수 있는 서비스를 제공합니다</S.Title>
       <S.SubTitle>
-        대추우랒두ㅏ허ㅜㅏ후ㅏㅣㅁ뤼ㅏ무나ㅣ뮈ㅜㅏㅣ뮈ㅏ
-        대추우랒두ㅏ허ㅜㅏ후ㅏㅣㅁ뤼ㅏ무나ㅣ뮈ㅜㅏㅣ뮈ㅏ
+        INSERT는 부산 소프트웨어 마이스터고 학생들에게 필요한 서비스를
+        제공합니다.
       </S.SubTitle>
       {projects.map((project) => (
         <S.ProjectLayout>
           {project.direction === "left" && (
-            <S.ProjectLogo src={project.logo} direction={project.direction} />
+            <a href={project.url}>
+              <S.ProjectLogo src={project.logo} direction={project.direction} />
+            </a>
           )}
           <S.ProjectContentsLayout>
             <S.ProjectTitle>{project.title}</S.ProjectTitle>
             <S.ProjectSubTitle>{project.subtitle}</S.ProjectSubTitle>
-            <S.ProjectSubTitle>Contributors</S.ProjectSubTitle>
-            <S.Contributors>
+            <S.Contributors>Contributors</S.Contributors>
+            <S.ContributorBox>
               {project.contributor.map((contributor) => (
                 <S.Contributor src={contributor} />
               ))}
-            </S.Contributors>
+            </S.ContributorBox>
           </S.ProjectContentsLayout>
           {project.direction === "right" && (
-            <S.ProjectLogo src={project.logo} direction={project.direction} />
+            <a href={project.url}>
+              <S.ProjectLogo src={project.logo} direction={project.direction} />
+            </a>
           )}
         </S.ProjectLayout>
       ))}
