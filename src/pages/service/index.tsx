@@ -30,7 +30,7 @@ function Service() {
   ];
 
   return (
-    <S.Container>
+    <S.Container id="service">
       <S.Title>사용할 수 있는 서비스를 제공합니다</S.Title>
       <S.SubTitle>
         INSERT는 부산 소프트웨어 마이스터고 학생들에게 필요한 서비스를

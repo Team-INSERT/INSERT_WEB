@@ -1,7 +1,12 @@
 import * as S from "./style";
 import Logo from "../../assets/logo.svg";
 
-const navigation = ["프로젝트", "역사 소개", "멤버 소개", "블로그"];
+const navigation = [
+  { title: "팀 소개", component: "history" },
+  { title: "프로젝트", component: "service" },
+  { title: "타임라인", component: "timeline" },
+  { title: "멤버", component: "member" },
+];
 
 function Header() {
   return (
@@ -12,8 +17,10 @@ function Header() {
           <S.HeaderTitle />
         </S.HeaderSymbol>
         <S.HeaderNavigation>
-          {navigation.map((title) => (
-            <S.HeaderNavigationItem to="/">{title}</S.HeaderNavigationItem>
+          {navigation.map((page) => (
+            <S.HeaderNavigationItem to={page.component} smooth>
+              {page.title}
+            </S.HeaderNavigationItem>
           ))}
         </S.HeaderNavigation>
       </S.HeaderContainer>

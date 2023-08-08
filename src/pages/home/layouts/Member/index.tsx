@@ -128,7 +128,7 @@ function Member() {
   const [currentGeneration, setCurrentGeneration] = useState("1st");
 
   return (
-    <S.MemberLayout>
+    <S.MemberLayout id="member">
       <S.MemberContainer>
         <S.MemberTitle>우리 멤버들ㅇㅣ다</S.MemberTitle>
         <S.MemberHr />

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import color from "../../styles/color";
 import { font } from "../../styles/font";
 
@@ -40,7 +40,7 @@ export const HeaderTitle = styled.h1`
 
 export const HeaderNavigation = styled.nav`
   display: flex;
-  gap: 30px;
+  gap: 50px;
   margin-left: auto;
 `;
 
@@ -48,4 +48,5 @@ export const HeaderNavigationItem = styled(Link)`
   ${font.p2};
   text-decoration: none;
   color: ${color.black};
+  cursor: pointer;
 `;

@@ -9,7 +9,7 @@ function HistoryPage() {
   };
 
   return (
-    <S.HistoryLayout>
+    <S.HistoryLayout id="history">
       <S.HistoryContainer>
         <S.HistoryText>
           <S.HistoryTitle>{title}</S.HistoryTitle>

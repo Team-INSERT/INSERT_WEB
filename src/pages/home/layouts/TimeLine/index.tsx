@@ -11,7 +11,7 @@ function TimeLine() {
   };
 
   return (
-    <S.Container>
+    <S.Container id="timeline">
       <S.Title>TimeLine</S.Title>
       <S.SubTitle>INSERT가 함께한 멋진 시간들을 소개합니다.</S.SubTitle>
       <S.TimeLineBox>
