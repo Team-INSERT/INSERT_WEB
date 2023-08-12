@@ -23,7 +23,7 @@ function Service() {
       logo: I.BSSMportfolio,
       url: "https://portfolio.bssm.io/",
       direction: "left",
-      title: "포토폴리오 사이트다",
+      title: "포토폴리오",
       subtitle: "기술스택 : Next.JS, TypeScript",
       contributor: [I.jimin],
     },
@@ -39,24 +39,24 @@ function Service() {
       {projects.map((project) => (
         <S.ProjectLayout>
           {project.direction === "left" && (
-            <a href={project.url}>
-              <S.ProjectLogo src={project.logo} direction={project.direction} />
-            </a>
+            <S.ProjectA href={project.url}>
+              <S.ProjectLogo src={project.logo} />
+            </S.ProjectA>
           )}
-          <S.ProjectContentsLayout>
+          <S.ProjectContentsLayout direction={project.direction}>
             <S.ProjectTitle>{project.title}</S.ProjectTitle>
             <S.ProjectSubTitle>{project.subtitle}</S.ProjectSubTitle>
-            <S.Contributors>Contributors</S.Contributors>
-            <S.ContributorBox>
+            <S.ProjectSubTitle>Contributors</S.ProjectSubTitle>
+            <S.Contributors>
               {project.contributor.map((contributor) => (
                 <S.Contributor src={contributor} />
               ))}
-            </S.ContributorBox>
+            </S.Contributors>
           </S.ProjectContentsLayout>
           {project.direction === "right" && (
-            <a href={project.url}>
-              <S.ProjectLogo src={project.logo} direction={project.direction} />
-            </a>
+            <S.ProjectA href={project.url}>
+              <S.ProjectLogo src={project.logo} />
+            </S.ProjectA>
           )}
         </S.ProjectLayout>
       ))}
