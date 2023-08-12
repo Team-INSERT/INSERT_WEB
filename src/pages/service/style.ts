@@ -29,7 +29,7 @@ export const ProjectLayout = styled.div`
   padding: 4% 0;
 `;
 
-export const ProjectA = styled.a`
+export const ProjectAnchor = styled.a`
   width: 44.5%;
 `;
 
