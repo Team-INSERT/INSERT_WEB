@@ -6,7 +6,6 @@ function Service() {
     {
       logo: I.BSM,
       url: "https://bssm.kro.kr/",
-      direction: "left",
       title: "BSM",
       subtitle: "기술스택 : Next.JS, TypeScript",
       contributor: [I.ubin, I.sewon, I.hyunjun, I.jacobhboy, I.hohyun],
@@ -14,7 +13,6 @@ function Service() {
     {
       logo: I.bumawiki,
       url: "https://buma.wiki/",
-      direction: "right",
       title: "부마위키",
       subtitle: "기술스택 : Next.JS, TypeScript",
       contributor: [I.ubin, I.sewon, I.jacobhboy, I.hohyun],
@@ -22,7 +20,6 @@ function Service() {
     {
       logo: I.BSSMportfolio,
       url: "https://portfolio.bssm.io/",
-      direction: "left",
       title: "포토폴리오",
       subtitle: "기술스택 : Next.JS, TypeScript",
       contributor: [I.jimin],
@@ -38,12 +35,10 @@ function Service() {
       </S.SubTitle>
       {projects.map((project) => (
         <S.ProjectLayout>
-          {project.direction === "left" && (
-            <S.ProjectAnchor href={project.url}>
-              <S.ProjectLogo src={project.logo} />
-            </S.ProjectAnchor>
-          )}
-          <S.ProjectContentsLayout direction={project.direction}>
+          <S.ProjectAnchor href={project.url}>
+            <S.ProjectLogo src={project.logo} />
+          </S.ProjectAnchor>
+          <S.ProjectContentsLayout>
             <S.ProjectTitle>{project.title}</S.ProjectTitle>
             <S.ProjectSubTitle>{project.subtitle}</S.ProjectSubTitle>
             <S.ProjectSubTitle>Contributors</S.ProjectSubTitle>
@@ -53,11 +48,6 @@ function Service() {
               ))}
             </S.Contributors>
           </S.ProjectContentsLayout>
-          {project.direction === "right" && (
-            <S.ProjectAnchor href={project.url}>
-              <S.ProjectLogo src={project.logo} />
-            </S.ProjectAnchor>
-          )}
         </S.ProjectLayout>
       ))}
     </S.Container>
