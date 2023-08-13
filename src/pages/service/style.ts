@@ -1,73 +1,74 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { font } from "styles/font";
 import color from "styles/color";
 
 export const Container = styled.div`
   max-width: 100%;
   display: flex;
-  margin: 0 7.5% 5% 10%;
+  margin: 0 10% 5% 10%;
   flex-direction: column;
 `;
 
 export const Title = styled.div`
   ${font.D3}
-  letter-spacing: -0.5%;
+  letter-spacing: -2px;
   color: ${color.black};
-  margin-bottom: 1%;
+  margin-bottom: 3%;
 `;
 
 export const SubTitle = styled.div`
   ${font.H4}
   color: ${color.text};
-  width: 60%;
-  margin-bottom: 1.5%;
+  width: 37%;
+  margin-bottom: 1%;
 `;
 
-export const ProjectLayout = styled.div`
-  display: flex;
-  border-bottom: 2px solid #d9d9d9;
-  padding: 3% 0;
+export const ProjectAnchor = styled.a`
+  width: 50%;
 `;
 
-export const ProjectLogo = styled.img<{ direction: string }>`
-  width: 80%;
-  ${(props) =>
-    props.direction === "left"
-      ? css`
-          margin-right: 0;
-        `
-      : css`
-          margin-left: 55%;
-        `}
+export const ProjectLogo = styled.img`
+  width: 100%;
 `;
 
 export const ProjectTitle = styled.div`
   ${font.D3}
-  margin-bottom: 1%;
+  margin-bottom: 2.5%;
 `;
 
 export const ProjectSubTitle = styled.div`
   ${font.H5}
   color: ${color.text};
-  margin-bottom: 5rem;
+
+  &:nth-child(2) {
+    margin-bottom: 23%;
+  }
 `;
 
 export const ProjectContentsLayout = styled.div`
   display: flex;
   flex-direction: column;
+  width: 50%;
+`;
+
+export const ProjectLayout = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 0 3%;
+  border-bottom: 2px solid ${color.content};
+  padding: 4% 0;
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
 `;
 
 export const Contributors = styled.div`
-  ${font.H5}
-  color: ${color.text};
-`;
-
-export const ContributorBox = styled.div`
   display: flex;
-  margin-top: 1%;
+  margin-top: 1.5%;
 `;
 
 export const Contributor = styled.img`
-  width: 2.5rem;
-  margin-right: 0.5rem;
+  width: 7.5%;
+  margin-right: 1.5%;
 `;
