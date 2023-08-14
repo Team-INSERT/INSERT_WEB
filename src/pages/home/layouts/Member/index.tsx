@@ -10,6 +10,8 @@ function Member() {
       tech: "Frontend Developer",
       github_url: "https://github.com/jeongdonggyeom",
       github_img_url: "https://avatars.githubusercontent.com/u/80656788?v=4",
+      birthMonth: 11,
+      birthDay: 22,
     },
     {
       memberId: 2,
@@ -18,6 +20,8 @@ function Member() {
       tech: "Frontend Developer",
       github_url: "https://github.com/jsm8109jsm",
       github_img_url: "https://avatars.githubusercontent.com/u/105054567?v=4",
+      birthMonth: 2,
+      birthDay: 3,
     },
     {
       memberId: 3,
@@ -26,6 +30,8 @@ function Member() {
       tech: "Frontend Developer",
       github_url: "https://github.com/J1min",
       github_img_url: "https://avatars.githubusercontent.com/u/80014454?v=4",
+      birthMonth: 10,
+      birthDay: 27,
     },
     {
       memberId: 4,
@@ -34,6 +40,8 @@ function Member() {
       tech: "Backend Developer",
       github_url: "https://github.com/min050410",
       github_img_url: "https://avatars.githubusercontent.com/u/45661217?v=4",
+      birthMonth: 4,
+      birthDay: 10,
     },
     {
       memberId: 5,
@@ -42,6 +50,8 @@ function Member() {
       tech: "Backend Developer",
       github_url: "https://github.com/leehj050211",
       github_img_url: "https://avatars.githubusercontent.com/u/80656849?v=4",
+      birthMonth: 2,
+      birthDay: 11,
     },
     {
       memberId: 6,
@@ -50,6 +60,8 @@ function Member() {
       tech: "Frontend Developer",
       github_url: "https://github.com/5ewon",
       github_img_url: "https://avatars.githubusercontent.com/u/101105694?v=4",
+      birthMonth: 4,
+      birthDay: 3,
     },
     {
       memberId: 7,
@@ -58,6 +70,8 @@ function Member() {
       tech: "Frontend Developer",
       github_url: "https://github.com/Ubinquitous",
       github_img_url: "https://avatars.githubusercontent.com/u/102154880?v=4",
+      birthMonth: 6,
+      birthDay: 27,
     },
     {
       memberId: 8,
@@ -66,6 +80,8 @@ function Member() {
       tech: "Backend Developer",
       github_url: "https://github.com/qlido",
       github_img_url: "https://avatars.githubusercontent.com/u/67864410?v=4",
+      birthMonth: 7,
+      birthDay: 27,
     },
     {
       memberId: 9,
@@ -74,6 +90,8 @@ function Member() {
       tech: "Backend Developer",
       github_url: "https://github.com/jacobhboy",
       github_img_url: "https://avatars.githubusercontent.com/u/101192100?v=4",
+      birthMonth: 7,
+      birthDay: 4,
     },
     {
       memberId: 10,
@@ -82,6 +100,8 @@ function Member() {
       tech: "Frontend Developer",
       github_url: "https://github.com/kimsiyeon0223",
       github_img_url: "https://avatars.githubusercontent.com/u/128461588?v=4",
+      birthMonth: 2,
+      birthDay: 23,
     },
     {
       memberId: 11,
@@ -90,6 +110,8 @@ function Member() {
       tech: "Frontend Developer",
       github_url: "https://github.com/zeroeuni",
       github_img_url: "https://avatars.githubusercontent.com/u/128370837?v=4",
+      birthMonth: 1,
+      birthDay: 13,
     },
     {
       memberId: 12,
@@ -98,6 +120,8 @@ function Member() {
       tech: "Frontend Developer",
       github_url: "https://github.com/jyh071116",
       github_img_url: "https://avatars.githubusercontent.com/u/128202921?v=4",
+      birthMonth: 11,
+      birthDay: 16,
     },
     {
       memberId: 13,
@@ -106,6 +130,8 @@ function Member() {
       tech: "Backend Developer",
       github_url: "https://github.com/J1W0N-1209",
       github_img_url: "https://avatars.githubusercontent.com/u/113921639?v=4",
+      birthMonth: 12,
+      birthDay: 9,
     },
     {
       memberId: 14,
@@ -114,6 +140,8 @@ function Member() {
       tech: "Backend Developer",
       github_url: "https://github.com/YunChan-Oh",
       github_img_url: "https://avatars.githubusercontent.com/u/91408117?v=4",
+      birthMonth: 8,
+      birthDay: 14,
     },
     {
       memberId: 15,
@@ -122,10 +150,16 @@ function Member() {
       tech: "Backend Developer",
       github_url: "https://github.com/jyj1289",
       github_img_url: "https://avatars.githubusercontent.com/u/121763556?v=4",
+      birthMonth: 6,
+      birthDay: 5,
     },
   ];
 
   const [currentGeneration, setCurrentGeneration] = useState("1st");
+
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth() + 1; // 1월부터 12월까지 0부터 11로 표현되므로 +1
+  const currentDay = currentDate.getDate();
 
   return (
     <S.MemberLayout id="member">
@@ -155,9 +189,14 @@ function Member() {
           </S.MemberGrade>
           <S.Member>
             {introMember.map((member, memberId) => (
-              <S.MemberMiddle>
+              <S.MemberMiddle key={memberId}>
                 {member.generation === currentGeneration && (
-                  <S.MemberProfile key={memberId}>
+                  <S.MemberProfile>
+                    {currentMonth === member.birthMonth &&
+                      currentDay === member.birthDay && (
+                        <S.Birthday src="images/birthday.jpg" />
+                      )}
+
                     <a
                       href={member.github_url}
                       target="_blank"
