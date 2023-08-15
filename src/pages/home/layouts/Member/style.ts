@@ -137,6 +137,12 @@ export const Profile = styled.img`
   height: 18vw;
 `;
 
+export const Birthday = styled.img`
+  position: absolute;
+  width: 16vw;
+  height: 18vw;
+`;
+
 export const Information = styled.div`
   display: flex;
   align-items: center;
