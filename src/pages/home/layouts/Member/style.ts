@@ -26,7 +26,7 @@ export const MemberTitle = styled.div`
 
 export const MemberHr = styled.div`
   display: flex;
-  border-bottom: 2px solid #d9d9d9;
+  border-bottom: 2px solid ${color.content};
 `;
 
 export const MemberMain = styled.div`
