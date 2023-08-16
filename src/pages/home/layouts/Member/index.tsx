@@ -173,7 +173,7 @@ function Member() {
         <S.MemberMain>
           <S.MemberFilter>
             <S.FilterButton
-              isActive={tech.length === 0 && gen.length === 0}
+              isActive={!techs.length && !gen.length}
               onClick={() => {
                 setTech([]);
                 setGen([]);
@@ -213,8 +213,8 @@ function Member() {
           <S.Member>
             {introMember.map((member, memberId) => (
               <S.MemberMiddle key={memberId}>
-                {(gen.includes(member.generation) || gen.length === 0) &&
-                  (tech.includes(member.tech) || tech.length === 0) && (
+                {(gen.includes(member.generation) || !gen.length) &&
+                  (tech.includes(member.tech) || !tech.length) && (
                     <S.MemberProfile>
                       {currentMonth === member.birthMonth &&
                         currentDay === member.birthDay && (
