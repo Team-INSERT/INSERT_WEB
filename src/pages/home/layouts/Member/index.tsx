@@ -46,7 +46,7 @@ function Member() {
     {
       memberId: 5,
       name: "이현준",
-      generation: "2rd",
+      generation: "1st",
       tech: "Backend Developer",
       github_url: "https://github.com/leehj050211",
       github_img_url: "https://avatars.githubusercontent.com/u/80656849?v=4",
@@ -155,7 +155,11 @@ function Member() {
     },
   ];
 
-  const [currentGeneration, setCurrentGeneration] = useState("1st");
+  const techs = ["Frontend Developer", "Backend Developer", "Designer"];
+  const gens = ["1st", "2nd", "3rd", "4th", "5th"];
+
+  const [tech, setTech] = useState<string[]>([]);
+  const [gen, setGen] = useState<string[]>([]);
 
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth() + 1; // 1월부터 12월까지 0부터 11로 표현되므로 +1
@@ -164,54 +168,74 @@ function Member() {
   return (
     <S.MemberLayout id="member">
       <S.MemberContainer>
-        <S.MemberTitle>우리 멤버들ㅇㅣ다</S.MemberTitle>
+        <S.MemberTitle>우리 멤버들이다</S.MemberTitle>
         <S.MemberHr />
         <S.MemberMain>
-          <S.MemberGrade>
-            <S.GradeTitle>Grade</S.GradeTitle>
-            <S.GradeButton>
-              <S.GradeButton1 onClick={() => setCurrentGeneration("1st")}>
-                1st
-              </S.GradeButton1>
-              <S.GradeButton2 onClick={() => setCurrentGeneration("2nd")}>
-                2nd
-              </S.GradeButton2>
-              <S.GradeButton3 onClick={() => setCurrentGeneration("3rd")}>
-                3rd
-              </S.GradeButton3>
-              <S.GradeButton4 onClick={() => setCurrentGeneration("4th")}>
-                4th
-              </S.GradeButton4>
-              <S.GradeButton5 onClick={() => setCurrentGeneration("5th")}>
-                5th
-              </S.GradeButton5>
-            </S.GradeButton>
-          </S.MemberGrade>
+          <S.MemberFilter>
+            <S.FilterButton
+              isActive={tech.length === 0 && gen.length === 0}
+              onClick={() => {
+                setTech([]);
+                setGen([]);
+              }}
+            >
+              All
+            </S.FilterButton>
+            <S.FilterTitle>Tech</S.FilterTitle>
+            {techs.map((item) => (
+              <S.FilterButton
+                isActive={tech.includes(item)}
+                onClick={() => {
+                  if (tech.includes(item)) {
+                    return setTech(tech.filter((a) => a !== item));
+                  }
+                  setTech([...tech, item]);
+                }}
+              >
+                {item.replace("Developer", "")}
+              </S.FilterButton>
+            ))}
+            <S.FilterTitle>Grade</S.FilterTitle>
+            {gens.map((item) => (
+              <S.FilterButton
+                isActive={gen.includes(item)}
+                onClick={() => {
+                  if (gen.includes(item)) {
+                    return setGen(gen.filter((a) => a !== item));
+                  }
+                  setGen([...gen, item]);
+                }}
+              >
+                {item}
+              </S.FilterButton>
+            ))}
+          </S.MemberFilter>
           <S.Member>
             {introMember.map((member, memberId) => (
               <S.MemberMiddle key={memberId}>
-                {member.generation === currentGeneration && (
-                  <S.MemberProfile>
-                    {currentMonth === member.birthMonth &&
-                      currentDay === member.birthDay && (
-                        <S.Birthday src="images/birthday.jpg" />
-                      )}
+                {(gen.includes(member.generation) || gen.length === 0) &&
+                  (tech.includes(member.tech) || tech.length === 0) && (
+                    <S.MemberProfile>
+                      {currentMonth === member.birthMonth &&
+                        currentDay === member.birthDay && (
+                          <S.Birthday src="images/birthday.jpg" />
+                        )}
 
-                    <a
-                      href={member.github_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <S.Profile src={member.github_img_url} />
-                    </a>
-                    <S.Information>
-                      <S.Name>{member.name}</S.Name>
-                      <S.Role>
-                        {member.generation} | {member.tech}
-                      </S.Role>
-                    </S.Information>
-                  </S.MemberProfile>
-                )}
+                      <a
+                        href={member.github_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <S.Profile src={member.github_img_url} />
+                      </a>
+                      <S.Information>
+                        <S.Name>{member.name}</S.Name>
+                        <S.Role>
+                          {member.generation} | {member.tech}
+                        </S.Role>
+                      </S.Information>
+                    </S.MemberProfile>
+                  )}
               </S.MemberMiddle>
             ))}
           </S.Member>
