@@ -3,8 +3,7 @@ import { font } from "styles/font";
 import color from "styles/color";
 
 export const HistoryLayout = styled.div`
-  width: 100%;
-  height: 45.5vw;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,15 +19,16 @@ export const HistoryContainer = styled.div`
 export const HistoryText = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 1%;
+  margin-top: 3%;
 `;
 
 export const HistoryTitle = styled.h1`
   display: flex;
   flex-direction: column;
   margin-left: auto;
-  ${font.H1}
+  ${font.D3}
   color: ${color.black};
+  letter-spacing: -2px;
 `;
 
 export const HistoryIntroduce = styled.div`
@@ -36,7 +36,7 @@ export const HistoryIntroduce = styled.div`
   flex-direction: column;
   margin-left: auto;
   margin-top: 1.5%;
-  ${font.H5};
+  ${font.H4};
   color: ${color.text};
 `;
 
@@ -51,7 +51,8 @@ export const HistoryIntroduce2 = styled.div`
 
 export const HistoryImg = styled.img`
   width: 100%;
+  height: 60%;
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 5%;
+  margin-top: 4%;
 `;
