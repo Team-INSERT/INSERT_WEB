@@ -165,48 +165,50 @@ function Member() {
   const currentMonth = currentDate.getMonth() + 1; // 1월부터 12월까지 0부터 11로 표현되므로 +1
   const currentDay = currentDate.getDate();
 
+  const clearFilter = () => {
+    setTech([]);
+    setGen([]);
+  };
+
+  const active = (filter: string[], item: string) => {
+    if (filter.includes(item)) {
+      const notActive = filter.filter((activeItem) => activeItem !== item);
+      return filter === tech ? setTech(notActive) : setGen(notActive);
+    }
+    return filter === tech
+      ? setTech([...filter, item])
+      : setGen([...filter, item]);
+  };
+
   return (
     <S.MemberLayout id="member">
       <S.MemberContainer>
-        <S.MemberTitle>우리 멤버들이다</S.MemberTitle>
+        <S.MemberTitle>멤버</S.MemberTitle>
         <S.MemberHr />
         <S.MemberMain>
           <S.MemberFilter>
             <S.FilterButton
-              isActive={!techs.length && !gen.length}
-              onClick={() => {
-                setTech([]);
-                setGen([]);
-              }}
+              isActive={!tech.length && !gen.length}
+              onClick={() => clearFilter()}
             >
               All
             </S.FilterButton>
             <S.FilterTitle>Tech</S.FilterTitle>
-            {techs.map((item) => (
+            {techs.map((techItem) => (
               <S.FilterButton
-                isActive={tech.includes(item)}
-                onClick={() => {
-                  if (tech.includes(item)) {
-                    return setTech(tech.filter((a) => a !== item));
-                  }
-                  setTech([...tech, item]);
-                }}
+                isActive={tech.includes(techItem)}
+                onClick={() => active(tech, techItem)}
               >
-                {item.replace("Developer", "")}
+                {techItem.replace("Developer", "")}
               </S.FilterButton>
             ))}
             <S.FilterTitle>Grade</S.FilterTitle>
-            {gens.map((item) => (
+            {gens.map((genItem) => (
               <S.FilterButton
-                isActive={gen.includes(item)}
-                onClick={() => {
-                  if (gen.includes(item)) {
-                    return setGen(gen.filter((a) => a !== item));
-                  }
-                  setGen([...gen, item]);
-                }}
+                isActive={gen.includes(genItem)}
+                onClick={() => active(gen, genItem)}
               >
-                {item}
+                {genItem}
               </S.FilterButton>
             ))}
           </S.MemberFilter>
