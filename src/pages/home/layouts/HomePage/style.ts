@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { font } from "../../../../styles/font";
-import color from "../../../../styles/color";
+import { font } from "styles/font";
+import color from "styles/color";
 
 export const HomePageLayOut = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const HomePageLogo = styled.img`
 
 export const HomePageHeader = styled.div`
   display: flex;
-  border-bottom: 2px solid #d9d9d9;
+  border-bottom: 2px solid ${color.content};
   margin: 2% 10% 0 10%;
 `;
 
