@@ -19,7 +19,7 @@ export const Title = styled.div`
 export const SubTitle = styled.div`
   ${font.H4}
   color: ${color.text};
-  width: 37%;
+  width: 80%;
   margin-bottom: 1%;
 `;
 
