@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { font } from "styles/font";
 import color from "styles/color";
 
@@ -19,7 +19,7 @@ export const MemberContainer = styled.div`
 
 export const MemberTitle = styled.div`
   padding: 0 0 1% 0;
-  ${font.D2};
+  ${font.D3};
   letter-spacing: -2px;
   color: ${color.black};
 `;
@@ -34,79 +34,39 @@ export const MemberMain = styled.div`
   width: 100%;
 `;
 
-export const MemberGrade = styled.div`
+export const MemberFilter = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 7% 15% 0 0;
+  padding: 0 15% 0 0;
 `;
 
-export const GradeTitle = styled.div`
+export const FilterTitle = styled.div`
   ${font.H2};
   color: ${color.black};
+  margin-top: 30%;
 `;
 
-export const GradeButton = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 40% 20% 0 0;
-`;
-
-export const GradeButton1 = styled.a`
+export const FilterButton = styled.div<{ isActive: boolean }>`
+  border-radius: 5px;
+  cursor: pointer;
   text-align: center;
+  padding: 3px 6px;
   ${font.H4};
-  color: ${color.gray};
-  &:hover {
-    background-color: ${color.on_tertiary};
-    border-radius: 5px;
-    cursor: pointer;
+  margin-top: 25%;
+  color: #ced4da;
+  &:first-child {
+    margin-top: 50%;
   }
-`;
-
-export const GradeButton2 = styled.a`
-  text-align: center;
-  ${font.H4};
-  margin-top: 40%;
-  color: ${color.gray};
-  &:hover {
-    background-color: ${color.on_tertiary};
-    border-radius: 5px;
-    cursor: pointer;
-  }
-`;
-
-export const GradeButton3 = styled.a`
-  text-align: center;
-  ${font.H4};
-  margin-top: 40%;
-  color: ${color.gray};
-  &:hover {
-    background-color: ${color.on_tertiary};
-    border-radius: 5px;
-    cursor: pointer;
-  }
-`;
-export const GradeButton4 = styled.a`
-  text-align: center;
-  ${font.H4};
-  margin-top: 40%;
-  color: ${color.gray};
-  &:hover {
-    background-color: ${color.on_tertiary};
-    border-radius: 5px;
-    cursor: pointer;
-  }
-`;
-
-export const GradeButton5 = styled.a`
-  text-align: center;
-  ${font.H4};
-  margin-top: 40%;
-  color: ${color.gray};
-  &:hover {
-    background-color: ${color.on_tertiary};
-    border-radius: 5px;
-    cursor: pointer;
-  }
+  ${(props) =>
+    props.isActive
+      ? css`
+          color: ${color.black};
+        `
+      : css`
+          &:hover {
+            background-color: #f1f3f5;
+          }
+        `}
 `;
 
 export const Member = styled.div`
