@@ -46,8 +46,7 @@ export const useCountAnimation = (props: UseCountAnimationProps) => {
       setCount(
         Math.floor(startNumber + (endNumber - startNumber) * progressRate),
       );
-      // eslint-disable-next-line no-plusplus
-      currentFrame++;
+      currentFrame += 1;
       lastRafExecutionTimestamp = currentTimestamp;
 
       if (progressRate === 1) {
