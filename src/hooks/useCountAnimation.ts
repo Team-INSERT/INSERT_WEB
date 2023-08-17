@@ -49,11 +49,7 @@ export const useCountAnimation = (props: UseCountAnimationProps) => {
       currentFrame += 1;
       lastRafExecutionTimestamp = currentTimestamp;
 
-      if (progressRate === 1) {
-        cancelAnimationFrame(rafId);
-        return;
-      }
-
+      if (progressRate === 1) return cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(handleCount);
     };
 
