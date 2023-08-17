@@ -29,7 +29,7 @@ function HomePage() {
                 const animatedValue = useCountAnimation({
                   startNumber: 0,
                   endNumber: item.value,
-                  durationMS: 2000, // 애니메이션 시간 (2초)
+                  durationMS: 3000, // 애니메이션 시간 (2초)
                   canStart: true,
                 });
 
@@ -51,14 +51,14 @@ function HomePage() {
                 const animatedValue = useCountAnimation({
                   startNumber: 0,
                   endNumber: item.value,
-                  durationMS: 2000, // 애니메이션 시간 (2초)
+                  durationMS: 3000, // 애니메이션 시간 (2초)
                   canStart: true,
                 });
 
                 return (
                   <div key={item.id}>
-                    <S.Title2>{item.title}</S.Title2>
-                    <S.Value2>{animatedValue.toLocaleString()}+</S.Value2>
+                    <S.Title>{item.title}</S.Title>
+                    <S.Value>{animatedValue.toLocaleString()}+</S.Value>
                   </div>
                 );
               }
