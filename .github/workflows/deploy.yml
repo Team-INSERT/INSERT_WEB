@@ -38,7 +38,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws s3 cp --region ap-northeast-2 ./build-fe.zip s3://Insert-TeamPage-Front/build-fe.zip
+          aws s3 cp --region ap-northeast-2 ./build-fe.zip s3://insert-teampage-fe/build-fe.zip
 
       - name: Deploy # Deploy to EC2
         run: aws deploy create-deployment
