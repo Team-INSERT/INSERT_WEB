@@ -154,12 +154,14 @@ function Member() {
       birthDay: 5,
     },
   ];
+  type Tech = string[];
+  type Gen = string[];
 
   const techs = ["Frontend Developer", "Backend Developer", "Designer"];
   const gens = ["1st", "2nd", "3rd", "4th", "5th"];
 
-  const [tech, setTech] = useState<string[]>([]);
-  const [gen, setGen] = useState<string[]>([]);
+  const [tech, setTech] = useState<Tech>([]);
+  const [gen, setGen] = useState<Gen>([]);
 
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth() + 1; // 1월부터 12월까지 0부터 11로 표현되므로 +1
@@ -170,7 +172,7 @@ function Member() {
     setGen([]);
   };
 
-  const active = (filter: string[], item: string) => {
+  const active = (filter: Tech | Gen, item: string) => {
     if (filter.includes(item)) {
       const notActive = filter.filter((activeItem) => activeItem !== item);
       return filter === tech ? setTech(notActive) : setGen(notActive);
@@ -202,7 +204,7 @@ function Member() {
                 {techItem.replace("Developer", "")}
               </S.FilterButton>
             ))}
-            <S.FilterTitle>Grade</S.FilterTitle>
+            <S.FilterTitle>Gen</S.FilterTitle>
             {gens.map((genItem) => (
               <S.FilterButton
                 isActive={gen.includes(genItem)}

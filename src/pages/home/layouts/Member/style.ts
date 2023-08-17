@@ -43,25 +43,28 @@ export const MemberFilter = styled.div`
 export const FilterTitle = styled.div`
   ${font.H2};
   color: ${color.black};
-  margin-top: 50%;
+  margin-top: 30%;
 `;
 
 export const FilterButton = styled.div<{ isActive: boolean }>`
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
+  padding: 3px 6px;
   ${font.H4};
-  margin-top: 40%;
-  color: ${color.gray};
+  margin-top: 25%;
+  color: #ced4da;
+  &:first-child {
+    margin-top: 50%;
+  }
   ${(props) =>
     props.isActive
       ? css`
-          background-color: ${color.black};
-          color: ${color.white};
+          color: ${color.black};
         `
       : css`
           &:hover {
-            background-color: ${color.on_tertiary};
+            background-color: #f1f3f5;
           }
         `}
 `;
