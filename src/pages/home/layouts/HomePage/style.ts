@@ -11,7 +11,7 @@ export const HomePageLayOut = styled.div`
 export const HomePageLogo = styled.img`
   width: 101.464px;
   height: 94.953px;
-  margin: 4% 0 0 30%;
+  margin: 4% 0 0 25%;
 `;
 
 export const HomePageHeader = styled.div`
