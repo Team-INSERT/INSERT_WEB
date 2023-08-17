@@ -42,7 +42,7 @@ jobs:
 
       - name: Deploy # Deploy to EC2
         run: aws deploy create-deployment
-          --application-name bongbong-practice
+          --application-name insert-teampage-fe
           --deployment-config-name CodeDeployDefault.AllAtOnce
-          --deployment-group-name bongbong-deploy-groupName
-          --s3-location bucket=bongbong-github-actions-tutorial,key=build-fe.zip,bundleType=zip
+          --deployment-group-name insert-teampage-deploy-group
+          --s3-location bucket=insert-teampage-fe,key=build-fe.zip,bundleType=zip
