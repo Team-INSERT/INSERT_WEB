@@ -11,7 +11,7 @@ export const HomePageLayOut = styled.div`
 export const HomePageLogo = styled.img`
   width: 101.464px;
   height: 94.953px;
-  margin: 4% 0 0 30%;
+  margin: 4% 0 0 25%;
 `;
 
 export const HomePageHeader = styled.div`
@@ -61,19 +61,6 @@ export const HomePageMiddle2 = styled.div`
   display: flex;
   color: ${color.black};
   margin: 2% 0 0 10%;
-`;
-
-export const Title2 = styled.p`
-  display: flex;
-  ${font.H2};
-  color: ${color.text};
-  margin: 3% 0 0 10%;
-`;
-
-export const Value2 = styled.p`
-  display: flex;
-  ${font.D2};
-  margin: 0 0 5% 10%;
 `;
 export const HomePageFooter = styled.p`
   color: ${color.text};
