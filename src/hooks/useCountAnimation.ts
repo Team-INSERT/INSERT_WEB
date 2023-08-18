@@ -13,15 +13,13 @@ export interface UseCountAnimationProps {
   fpsReductionFactor?: number; // fps를 n배 줄이고 싶을 때의 n
   canStart?: boolean; // 애니메이션을 시작할 타이밍 (ex: 특정 영역이 화면이 보이기 시작할 때)
 }
-export const useCountAnimation = (props: UseCountAnimationProps) => {
-  const {
-    startNumber = 0,
-    endNumber,
-    durationMS,
-    fpsReductionFactor = 1,
-    canStart = true,
-  } = props;
-
+export const useCountAnimation = ({
+  startNumber = 0,
+  endNumber,
+  durationMS,
+  fpsReductionFactor = 1,
+  canStart = true,
+}: UseCountAnimationProps) => {
   const fps = BROWSER_FPS / fpsReductionFactor;
 
   const [count, setCount] = useState<number>(startNumber);
