@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { font } from "styles/font";
+import theme from "theme";
 import color from "styles/color";
 
 export const Container = styled.div`
@@ -46,6 +47,12 @@ export const TimeLineO = styled.div`
   background: black;
   border-radius: 50%;
   margin: 100% 0 0 142%;
+  @media ${theme.device.mobile} {
+    margin: 90% 0 0 130%;
+  }
+  @media ${theme.device.tablit} {
+    margin: 100% 0 0 138%;
+  }
 `;
 
 export const TimeLineItem = styled.div`

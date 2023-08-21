@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { font } from "styles/font";
+import theme from "theme";
 import color from "styles/color";
 
 export const MemberLayout = styled.div`
@@ -38,6 +39,13 @@ export const MemberFilter = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 15% 0 0;
+  background-color: aliceblue;
+  @media ${theme.device.mobile} {
+    padding: 0 6% 0 0;
+  }
+  @media ${theme.device.tablit} {
+    padding: 0 7% 0 0;
+  }
 `;
 
 export const FilterTitle = styled.div`
@@ -114,6 +122,8 @@ export const Name = styled.div`
   ${font.H5};
   color: ${color.black};
   margin-top: 3%;
+  @media ${theme.device.mobile} {
+  }
 `;
 
 export const Role = styled.div`

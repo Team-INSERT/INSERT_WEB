@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import theme from "theme";
 import color from "../../styles/color";
 import { font } from "../../styles/font";
 
@@ -28,6 +29,10 @@ export const HeaderSymbol = styled.div`
 export const HeaderLogo = styled.img`
   width: 33px;
   height: 33px;
+  @media ${theme.device.mobile} {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 export const HeaderTitle = styled.h1`
@@ -42,6 +47,9 @@ export const HeaderNavigation = styled.nav`
   display: flex;
   gap: 50px;
   margin-left: auto;
+  @media ${theme.device.mobile} {
+    gap: 20px;
+  }
 `;
 
 export const HeaderNavigationItem = styled(Link)`

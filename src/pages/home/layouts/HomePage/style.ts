@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { font } from "styles/font";
 import color from "styles/color";
+import theme from "theme";
 
 export const HomePageLayOut = styled.div`
   display: flex;
@@ -12,6 +13,10 @@ export const HomePageLogo = styled.img`
   width: 101.464px;
   height: 94.953px;
   margin: 4% 0 0 25%;
+  @media ${theme.device.mobile} {
+    width: 50px;
+    height: 45px;
+  }
 `;
 
 export const HomePageHeader = styled.div`
@@ -28,9 +33,9 @@ export const HomePageTitle = styled.h1`
 
 export const HomePageSubTitle = styled.p`
   display: flex;
-  width: 800px;
   color: ${color.black};
   margin: 2% 0 0 1%;
+  width: 100%;
   ${font.H2};
 `;
 export const HomePageMiddle = styled.div`
