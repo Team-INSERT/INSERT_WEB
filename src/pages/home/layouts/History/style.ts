@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { font } from "styles/font";
-import theme from "theme";
 import color from "styles/color";
 
 export const HistoryLayout = styled.div`
@@ -38,9 +37,6 @@ export const HistoryIntroduce = styled.div`
   margin-top: 1.5%;
   ${font.H4};
   color: ${color.text};
-  @media screen and (max-width: 768px) {
-    ${font.ss};
-  }
 `;
 
 export const HistoryIntroduce1 = styled.div`

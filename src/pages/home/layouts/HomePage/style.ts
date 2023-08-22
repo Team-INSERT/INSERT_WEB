@@ -10,12 +10,13 @@ export const HomePageLayOut = styled.div`
 `;
 
 export const HomePageLogo = styled.img`
-  width: 101.464px;
-  height: 94.953px;
+  width: 8.5%;
   margin: 4% 0 0 25%;
   @media ${theme.device.mobile} {
-    width: 50px;
-    height: 45px;
+    width: 15%;
+  }
+  @media ${theme.device.fold} {
+    width: 20%;
   }
 `;
 

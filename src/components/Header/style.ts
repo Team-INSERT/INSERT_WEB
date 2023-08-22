@@ -24,12 +24,19 @@ export const HeaderSymbol = styled.div`
   display: flex;
   gap: 12px;
   align-items: center;
+  @media ${theme.device.fold} {
+    gap: 7px;
+  }
 `;
 
 export const HeaderLogo = styled.img`
   width: 33px;
   height: 33px;
   @media ${theme.device.mobile} {
+    width: 25px;
+    height: 25px;
+  }
+  @media ${theme.device.fold} {
     width: 25px;
     height: 25px;
   }
@@ -49,6 +56,9 @@ export const HeaderNavigation = styled.nav`
   margin-left: auto;
   @media ${theme.device.mobile} {
     gap: 20px;
+  }
+  @media ${theme.device.fold} {
+    gap: 10px;
   }
 `;
 

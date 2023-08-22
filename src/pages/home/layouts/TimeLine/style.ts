@@ -53,6 +53,11 @@ export const TimeLineO = styled.div`
   @media ${theme.device.tablit} {
     margin: 100% 0 0 138%;
   }
+  @media ${theme.device.fold} {
+    margin: 80% 0 0 128%;
+    width: 14px;
+    height: 14px;
+  }
 `;
 
 export const TimeLineItem = styled.div`
@@ -70,6 +75,12 @@ export const TimeLineDate = styled.p`
 export const TimeLineText = styled.div`
   display: flex;
   margin: 4% 0 0 10%;
+  @media ${theme.device.mobile} {
+    margin: 4% 0 0 12%;
+  }
+  @media ${theme.device.fold} {
+    margin: 2% 0 0 12%;
+  }
 `;
 
 export const TimeLineYear = styled.div`
