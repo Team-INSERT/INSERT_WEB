@@ -22,10 +22,10 @@ export const HeaderContainer = styled.div`
 
 export const HeaderSymbol = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 12%;
   align-items: center;
   @media ${theme.device.fold} {
-    gap: 7px;
+    gap: 7%;
   }
 `;
 
