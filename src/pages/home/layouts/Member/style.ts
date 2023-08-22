@@ -89,18 +89,23 @@ export const Member = styled.div`
   @media ${theme.device.mobile} {
     padding: 3% 0 10% 3%;
   }
+  @media ${theme.device.tablit} {
+    padding: 3% 0 10% 2%;
+  }
 `;
 
 export const MemberMiddle = styled.div`
   display: flex;
   flex-wrap: wrap;
+  background-color: azure;
 `;
 
 export const MemberProfile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 60px 20px;
+  margin: 0 0 60px 17px;
+  background-color: aqua;
   & > a {
     text-decoration: none;
   }
@@ -108,7 +113,7 @@ export const MemberProfile = styled.div`
     margin: 0 0 30px 9px;
   }
   @media ${theme.device.mobile} {
-    margin: 0 0 28px 12px;
+    margin: 0 0 28px 10px;
   }
 `;
 
