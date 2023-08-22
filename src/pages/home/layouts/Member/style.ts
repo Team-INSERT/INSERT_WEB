@@ -97,7 +97,6 @@ export const Member = styled.div`
 export const MemberMiddle = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background-color: azure;
 `;
 
 export const MemberProfile = styled.div`
@@ -105,7 +104,6 @@ export const MemberProfile = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 0 60px 17px;
-  background-color: aqua;
   & > a {
     text-decoration: none;
   }
