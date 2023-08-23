@@ -7,7 +7,7 @@ function Member() {
   type Tech = string[];
   type Gen = string[];
 
-  const techs = ["Frontend Developer", "Backend Developer", "Designer"];
+  const techs = ["Frontend", "Backend"];
   const gens = ["1st", "2nd", "3rd", "4th", "5th"];
 
   const [tech, setTech] = useState<Tech>([]);
@@ -79,7 +79,7 @@ function Member() {
             ))}
           </S.MemberFilter>
           <S.Member>
-            <S.Loading loading={isLoading} size={30} />
+            <S.Loading loading={isLoading} size="2.5rem" />
             {introMember ? (
               introMember.map((member, memberId) => (
                 <S.MemberMiddle key={memberId}>

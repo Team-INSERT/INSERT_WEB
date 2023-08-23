@@ -25,7 +25,7 @@ export const requestMember = async (): Promise<MemberType[]> => {
         name: login,
         generation:
           generation !== null ? changeGenString(generation) : PostGen(login),
-        tech: "Frontend Developer",
+        tech: "Frontend",
         github_url: html_url,
         github_img_url: avatar_url,
       }),
@@ -36,7 +36,7 @@ export const requestMember = async (): Promise<MemberType[]> => {
         name: login,
         generation:
           generation !== null ? changeGenString(generation) : PostGen(login),
-        tech: "Backend Developer",
+        tech: "Backend",
         github_url: html_url,
         github_img_url: avatar_url,
       }),

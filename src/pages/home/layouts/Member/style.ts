@@ -142,6 +142,9 @@ export const Role = styled.div`
   color: ${color.gray};
   margin-top: 3%;
   margin-left: 0.4rem;
+  &::after {
+    content: "-Developer";
+  }
   @media ${theme.device.fold} {
     display: none;
   }
