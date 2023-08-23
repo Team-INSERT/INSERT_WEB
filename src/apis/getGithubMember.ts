@@ -1,7 +1,8 @@
 import axios from "axios";
 import { customAxios } from "lib/customAxios";
 import MemberType from "types/MemberType";
-import { PostGen } from "./postGen";
+import { changeGenString } from "utils/changeGenString";
+import { PostGen } from "apis/postGen";
 
 interface UserType {
   generation: number;
@@ -10,19 +11,6 @@ interface UserType {
   html_url: string;
   id: number;
 }
-
-const changeGenString = (GenNum: number): string => {
-  if (GenNum === 1 || GenNum === 31) {
-    return `${GenNum}st`;
-  }
-  if (GenNum === 2 || GenNum === 32) {
-    return `${GenNum}nd`;
-  }
-  if (GenNum === 3 || GenNum === 33) {
-    return `${GenNum}rd`;
-  }
-  return `${GenNum}th`;
-};
 
 export const requestMember = async (): Promise<MemberType[]> => {
   const res = await axios.all([
