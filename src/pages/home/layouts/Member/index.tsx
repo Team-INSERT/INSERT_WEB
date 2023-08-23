@@ -85,14 +85,12 @@ function Member() {
                 <S.MemberMiddle key={memberId}>
                   {(gen.includes(member.generation) || !gen.length) &&
                     (tech.includes(member.tech) || !tech.length) && (
-                      <S.MemberProfile>
-                        <a
-                          href={member.github_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <S.Profile src={member.github_img_url} />
-                        </a>
+                      <S.MemberProfile
+                        href={member.github_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <S.Profile src={member.github_img_url} />
                         <S.Information>
                           <S.Name>{member.name}</S.Name>
                           <S.Role>

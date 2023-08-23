@@ -100,7 +100,7 @@ export const MemberMiddle = styled.div`
   flex-wrap: wrap;
 `;
 
-export const MemberProfile = styled.div`
+export const MemberProfile = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
