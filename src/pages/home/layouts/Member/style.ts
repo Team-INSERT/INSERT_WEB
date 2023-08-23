@@ -122,16 +122,10 @@ export const Profile = styled.img`
   height: 18vw;
 `;
 
-export const Birthday = styled.img`
-  position: absolute;
-  width: 16vw;
-  height: 18vw;
-`;
-
 export const Information = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-right: auto;
 `;
 
 export const Name = styled.div`
@@ -153,4 +147,11 @@ export const Role = styled.div`
   @media ${theme.device.mobile} {
     display: none;
   }
+`;
+
+export const Error = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${font.H1};
 `;
