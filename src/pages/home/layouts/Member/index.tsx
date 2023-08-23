@@ -19,7 +19,7 @@ function Member() {
     requestMember()
       .then((data) => setIntroMember(data))
       .catch(() => setIntroMember(null));
-  });
+  }, []);
 
   const clearFilter = () => {
     setTech([]);
