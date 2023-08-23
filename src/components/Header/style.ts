@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import theme from "theme";
 import color from "../../styles/color";
 import { font } from "../../styles/font";
 
@@ -21,13 +22,24 @@ export const HeaderContainer = styled.div`
 
 export const HeaderSymbol = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 12%;
   align-items: center;
+  @media ${theme.device.fold} {
+    gap: 7%;
+  }
 `;
 
 export const HeaderLogo = styled.img`
   width: 33px;
   height: 33px;
+  @media ${theme.device.mobile} {
+    width: 25px;
+    height: 25px;
+  }
+  @media ${theme.device.fold} {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 export const HeaderTitle = styled.h1`
@@ -42,6 +54,12 @@ export const HeaderNavigation = styled.nav`
   display: flex;
   gap: 50px;
   margin-left: auto;
+  @media ${theme.device.mobile} {
+    gap: 20px;
+  }
+  @media ${theme.device.fold} {
+    gap: 10px;
+  }
 `;
 
 export const HeaderNavigationItem = styled(Link)`

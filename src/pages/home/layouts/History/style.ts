@@ -11,7 +11,6 @@ export const HistoryLayout = styled.div`
 
 export const HistoryContainer = styled.div`
   width: 80%;
-  height: 90%;
   display: flex;
   text-align: center;
 `;

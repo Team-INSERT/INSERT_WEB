@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { font } from "styles/font";
+import theme from "theme";
 import color from "styles/color";
 
 export const MemberLayout = styled.div`
@@ -37,7 +38,16 @@ export const MemberMain = styled.div`
 export const MemberFilter = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 15% 0 0;
+  padding: 0 8% 0 0;
+  @media ${theme.device.tablit} {
+    padding: 0 6% 0 0;
+  }
+  @media ${theme.device.mobile} {
+    padding: 0 4% 0 0;
+  }
+  @media ${theme.device.fold} {
+    padding: 0 2% 0 0;
+  }
 `;
 
 export const FilterTitle = styled.div`
@@ -72,7 +82,16 @@ export const FilterButton = styled.div<{ isActive: boolean }>`
 export const Member = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 3% 0 10% 3%;
+  padding: 3% 0 10% 8%;
+  @media ${theme.device.fold} {
+    padding: 3% 0 10% 0;
+  }
+  @media ${theme.device.mobile} {
+    padding: 3% 0 10% 3%;
+  }
+  @media ${theme.device.tablit} {
+    padding: 3% 0 10% 2%;
+  }
 `;
 
 export const MemberMiddle = styled.div`
@@ -84,9 +103,15 @@ export const MemberProfile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 60px 20px;
+  margin: 0 0 60px 17px;
   & > a {
     text-decoration: none;
+  }
+  @media ${theme.device.fold} {
+    margin: 0 0 30px 9px;
+  }
+  @media ${theme.device.mobile} {
+    margin: 0 0 28px 10px;
   }
 `;
 
@@ -122,4 +147,10 @@ export const Role = styled.div`
   color: ${color.gray};
   margin-top: 3%;
   margin-left: 0.4rem;
+  @media ${theme.device.fold} {
+    display: none;
+  }
+  @media ${theme.device.mobile} {
+    display: none;
+  }
 `;
