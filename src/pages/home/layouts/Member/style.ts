@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import BeatLoader from "react-spinners/BeatLoader";
 import { font } from "styles/font";
 import theme from "theme";
 import color from "styles/color";
@@ -147,6 +148,13 @@ export const Role = styled.div`
   @media ${theme.device.mobile} {
     display: none;
   }
+`;
+
+export const Loading = styled(BeatLoader)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rem;
 `;
 
 export const Error = styled.div`

@@ -14,11 +14,21 @@ function Member() {
   const [gen, setGen] = useState<Gen>([]);
 
   const [introMember, setIntroMember] = useState<MemberType[] | null>([]);
+  const [isLoading, setIsloading] = useState(true);
 
   useEffect(() => {
-    requestMember()
-      .then((data) => setIntroMember(data))
-      .catch(() => setIntroMember(null));
+    const getMember = async () => {
+      try {
+        const res = await requestMember();
+        setIntroMember(res);
+      } catch {
+        setIntroMember(null);
+      } finally {
+        setIsloading(false);
+      }
+    };
+
+    getMember();
   }, []);
 
   const clearFilter = () => {
@@ -69,7 +79,8 @@ function Member() {
             ))}
           </S.MemberFilter>
           <S.Member>
-            {introMember !== null ? (
+            <S.Loading loading={isLoading} size={30} />
+            {introMember ? (
               introMember.map((member, memberId) => (
                 <S.MemberMiddle key={memberId}>
                   {(gen.includes(member.generation) || !gen.length) &&

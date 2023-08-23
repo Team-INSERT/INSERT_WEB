@@ -2,7 +2,7 @@ import axios from "axios";
 import { customAxios } from "lib/customAxios";
 import MemberType from "types/MemberType";
 import { changeGenString } from "utils/changeGenString";
-import { PostGen } from "apis/postGen";
+import { PostGen } from "./postGen";
 
 interface UserType {
   generation: number;
