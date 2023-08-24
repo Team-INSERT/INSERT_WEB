@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import BeatLoader from "react-spinners/BeatLoader";
 import { font } from "styles/font";
 import theme from "theme";
 import color from "styles/color";
@@ -99,7 +100,7 @@ export const MemberMiddle = styled.div`
   flex-wrap: wrap;
 `;
 
-export const MemberProfile = styled.div`
+export const MemberProfile = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,16 +123,10 @@ export const Profile = styled.img`
   height: 18vw;
 `;
 
-export const Birthday = styled.img`
-  position: absolute;
-  width: 16vw;
-  height: 18vw;
-`;
-
 export const Information = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-right: auto;
 `;
 
 export const Name = styled.div`
@@ -147,10 +142,27 @@ export const Role = styled.div`
   color: ${color.gray};
   margin-top: 3%;
   margin-left: 0.4rem;
+  &::after {
+    content: "-Developer";
+  }
   @media ${theme.device.fold} {
     display: none;
   }
   @media ${theme.device.mobile} {
     display: none;
   }
+`;
+
+export const Loading = styled(BeatLoader)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rem;
+`;
+
+export const Error = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${font.H1};
 `;
