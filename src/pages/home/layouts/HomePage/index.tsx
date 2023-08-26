@@ -34,10 +34,10 @@ function HomePage() {
                 });
 
                 return (
-                  <div key={item.id}>
-                    <S.Title>{item.title}</S.Title>
+                  <S.ValueBox>
+                    <S.Title key={item.id}>{item.title}</S.Title>
                     <S.Value>{animatedValue.toLocaleString()}+</S.Value>
-                  </div>
+                  </S.ValueBox>
                 );
               }
               return null;
@@ -56,10 +56,10 @@ function HomePage() {
                 });
 
                 return (
-                  <div key={item.id}>
-                    <S.Title>{item.title}</S.Title>
+                  <S.ValueBox>
+                    <S.Title key={item.id}>{item.title}</S.Title>
                     <S.Value>{animatedValue.toLocaleString()}+</S.Value>
-                  </div>
+                  </S.ValueBox>
                 );
               }
               return null;
