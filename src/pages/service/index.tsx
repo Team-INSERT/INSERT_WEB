@@ -34,8 +34,8 @@ function Service() {
         제공합니다.
       </S.SubTitle>
       {projects.map((project) => (
-        <S.ProjectLayout>
-          <S.ProjectAnchor href={project.url}>
+        <S.ProjectLayout href={project.url}>
+          <S.ProjectAnchor>
             <S.ProjectLogo src={project.logo} />
           </S.ProjectAnchor>
           <S.ProjectContentsLayout>
