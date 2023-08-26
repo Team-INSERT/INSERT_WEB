@@ -15,13 +15,15 @@ function Member() {
 
   const [introMember, setIntroMember] = useState<MemberType[] | null>([]);
   const [isLoading, setIsloading] = useState(true);
+  const [loadingError, setLoadingError] = useState<string | null>(null);
 
   useEffect(() => {
     const getMember = async () => {
       try {
         const res = await requestMember();
         setIntroMember(res);
-      } catch {
+      } catch (error) {
+        setLoadingError("멤버 정보를 받아올 수 없습니다!");
         setIntroMember(null);
       } finally {
         setIsloading(false);
@@ -130,6 +132,7 @@ function Member() {
                   </S.MemberProfile>
                 </S.MemberMiddle>
               ))}
+            {loadingError && <S.Error>{loadingError}</S.Error>}
           </S.Member>
         </S.MemberMain>
       </S.MemberContainer>
