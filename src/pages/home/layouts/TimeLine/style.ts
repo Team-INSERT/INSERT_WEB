@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { font } from "styles/font";
 import theme from "theme";
 import color from "styles/color";
@@ -64,12 +64,25 @@ export const TimeLineItem = styled.div`
   display: flex;
 `;
 
-export const TimeLineDate = styled.p`
+export const TimeLineDate = styled.div<{ isActive: boolean }>`
   display: flex;
   flex-direction: column;
   ${font.H1}
   color: ${color.black};
   margin: 80% 0 50% 0;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  ${(props) =>
+    props.isActive &&
+    css`
+      background-color: #dedede;
+      color: ${color.white};
+      cursor: pointer;
+      transform: scale(1.2);
+    `}
 `;
 
 export const TimeLineText = styled.div`
@@ -88,13 +101,15 @@ export const TimeLineYear = styled.div`
 `;
 
 export const TimeLineContentDate = styled.p`
-  ${font.H2}
+  ${font.H1}
   color: ${color.text};
 `;
 
 export const TimeLineContent = styled.p`
-  ${font.H3}
+  ${font.H2}
   font-weight: 700;
+  width: 100%;
   color: ${color.black};
-  margin-top: 5%;
+  margin: 10% 0 5% 0;
+  white-space: pre-line;
 `;
