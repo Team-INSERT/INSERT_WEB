@@ -6,8 +6,8 @@ function HomePage() {
   const middle = [
     { id: 1, title: "작성한 코드 라인", value: 168257 },
     { id: 2, title: "웹 페이지 조회수", value: 560257 },
-    { id: 3, title: "총 커밋 횟수", value: 2358 },
-    { id: 4, title: "함께한 시간", value: 2650 },
+    { id: 3, title: "총 커밋 횟수", value: 3658 },
+    { id: 4, title: "함께한 시간", value: 5652 },
   ];
 
   return (
