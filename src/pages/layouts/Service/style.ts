@@ -40,16 +40,20 @@ export const ProjectTitle = styled.div`
 export const ProjectSubTitle = styled.div`
   ${font.H5}
   color: ${color.text};
+  white-space: pre-wrap;
+`;
 
-  &:nth-child(2) {
-    margin-bottom: 23%;
-  }
+export const ContributorsLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 `;
 
 export const ProjectContentsLayout = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+  justify-content: space-between;
 `;
 
 export const ProjectLayout = styled.a`

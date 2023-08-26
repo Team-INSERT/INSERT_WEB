@@ -3,9 +3,10 @@ import * as S from "./style";
 function HistoryPage() {
   const { title, introduce1, introduce2 } = {
     title: "학교와 함께 역사를 써내려갑니다.",
-    introduce1: "INSERT는 2023년 3월에 만들어진 부산 소마고 전공동아리 입니다.",
+    introduce1:
+      "INSERT는 2023년 3월에 만들어진 부산소프트웨어마이스터고등학교의 전공동아리입니다.",
     introduce2:
-      "저희는 학교 플랫폼 개발 동아리로 학교 커뮤니티를 발전시키는 프로젝트를 진행합니다.",
+      "학생들의 편리한 학교 생활을 위해, 교내 학생들과 관련된 모든 서비스들을 제공합니다.",
   };
 
   return (

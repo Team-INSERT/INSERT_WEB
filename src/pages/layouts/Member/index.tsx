@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { requestMember } from "apis/getGithubMember";
 import MemberType from "types/MemberType";
+import { changeGenString } from "utils/changeGenString";
 import * as S from "./style";
 
 function Member() {
@@ -8,7 +9,9 @@ function Member() {
   type Gen = string[];
 
   const techs = ["Frontend", "Backend"];
-  const gens = ["1st", "2nd", "3rd", "4th", "5th"];
+  const gens = Array.from({ length: new Date().getFullYear() - 2020 }).map(
+    (_, i) => changeGenString(i + 1),
+  );
 
   const [tech, setTech] = useState<Tech>([]);
   const [gen, setGen] = useState<Gen>([]);
@@ -32,11 +35,6 @@ function Member() {
 
     getMember();
   }, []);
-
-  const clearFilter = () => {
-    setTech([]);
-    setGen([]);
-  };
 
   const active = (filter: Tech | Gen, item: string) => {
     if (filter.includes(item)) {
@@ -71,16 +69,10 @@ function Member() {
   return (
     <S.MemberLayout id="member">
       <S.MemberContainer>
-        <S.MemberTitle>멤버</S.MemberTitle>
+        <S.MemberTitle>인서트의 멤버들을 소개합니다</S.MemberTitle>
         <S.MemberHr />
         <S.MemberMain>
           <S.MemberFilter>
-            <S.FilterButton
-              isActive={!tech.length && !gen.length}
-              onClick={() => clearFilter()}
-            >
-              All
-            </S.FilterButton>
             <S.FilterTitle>Tech</S.FilterTitle>
             {techs.map((techItem) => (
               <S.FilterButton
@@ -90,7 +82,7 @@ function Member() {
                 {techItem.replace("Developer", "")}
               </S.FilterButton>
             ))}
-            <S.FilterTitle>Gen</S.FilterTitle>
+            <S.FilterTitle>Generation</S.FilterTitle>
             {gens.map((genItem) => (
               <S.FilterButton
                 isActive={gen.includes(genItem)}
@@ -132,7 +124,6 @@ function Member() {
                   </S.MemberProfile>
                 </S.MemberMiddle>
               ))}
-            {loadingError && <S.Error>{loadingError}</S.Error>}
           </S.Member>
         </S.MemberMain>
       </S.MemberContainer>

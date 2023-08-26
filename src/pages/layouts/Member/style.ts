@@ -52,7 +52,7 @@ export const MemberFilter = styled.div`
 `;
 
 export const FilterTitle = styled.div`
-  ${font.H2};
+  ${font.H4};
   color: ${color.black};
   margin-top: 30%;
 `;
@@ -64,6 +64,8 @@ export const FilterButton = styled.div<{ isActive: boolean }>`
   padding: 3px 6px;
   ${font.H4};
   margin-top: 25%;
+  margin-right: auto;
+  margin-left: 8%;
   color: #ced4da;
   &:first-child {
     margin-top: 50%;
