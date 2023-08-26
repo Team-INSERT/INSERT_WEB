@@ -98,6 +98,7 @@ export const Member = styled.div`
 export const MemberMiddle = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: 2%;
 `;
 
 export const MemberProfile = styled.a`
@@ -165,4 +166,31 @@ export const Error = styled.div`
   justify-content: center;
   align-items: center;
   ${font.H1};
+`;
+
+export const Pagination = styled.div`
+  width: 100%;
+`;
+export const PaginationButton = styled.button<{ isActive: boolean }>`
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: ${color.gray};
+  outline: none;
+  background: none;
+  font-wight: 800;
+  font-size: 20px;
+  flex-shrink: 0;
+
+  ${(props) =>
+    props.isActive &&
+    css`
+      color: ${color.black};
+      font-weight: 800;
+    `}
+
+  &:hover {
+    background-color: #dedede;
+  }
 `;

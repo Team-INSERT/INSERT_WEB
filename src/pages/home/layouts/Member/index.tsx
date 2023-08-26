@@ -45,6 +45,26 @@ function Member() {
       ? setTech([...filter, item])
       : setGen([...filter, item]);
   };
+  const profilesPage = 6;
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const filteredMembers = introMember
+    ? introMember.filter(
+        (member) =>
+          (gen.includes(member.generation) || !gen.length) &&
+          (tech.includes(member.tech) || !tech.length),
+      )
+    : [];
+
+  const totalPages = Math.ceil(filteredMembers.length / profilesPage);
+
+  const startIndex = (currentPage - 1) * profilesPage;
+  const endIndex = startIndex + profilesPage;
 
   return (
     <S.MemberLayout id="member">
@@ -79,31 +99,37 @@ function Member() {
             ))}
           </S.MemberFilter>
           <S.Member>
+            <S.Pagination>
+              {Array.from({ length: totalPages }, (_, index) => (
+                <S.PaginationButton
+                  key={index}
+                  onClick={() => handlePageChange(index + 1)}
+                  isActive={index + 1 === currentPage}
+                >
+                  {index + 1}
+                </S.PaginationButton>
+              ))}
+            </S.Pagination>
             <S.Loading loading={isLoading} size="2.5rem" />
-            {introMember ? (
-              introMember.map((member, memberId) => (
+            {filteredMembers
+              .slice(startIndex, endIndex)
+              .map((member, memberId) => (
                 <S.MemberMiddle key={memberId}>
-                  {(gen.includes(member.generation) || !gen.length) &&
-                    (tech.includes(member.tech) || !tech.length) && (
-                      <S.MemberProfile
-                        href={member.github_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <S.Profile src={member.github_img_url} />
-                        <S.Information>
-                          <S.Name>{member.name}</S.Name>
-                          <S.Role>
-                            {member.generation} | {member.tech}
-                          </S.Role>
-                        </S.Information>
-                      </S.MemberProfile>
-                    )}
+                  <S.MemberProfile
+                    href={member.github_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <S.Profile src={member.github_img_url} />
+                    <S.Information>
+                      <S.Name>{member.name}</S.Name>
+                      <S.Role>
+                        {member.generation} | {member.tech}
+                      </S.Role>
+                    </S.Information>
+                  </S.MemberProfile>
                 </S.MemberMiddle>
-              ))
-            ) : (
-              <S.Error>멤버 정보를 받아올 수 없습니다!</S.Error>
-            )}
+              ))}
           </S.Member>
         </S.MemberMain>
       </S.MemberContainer>
