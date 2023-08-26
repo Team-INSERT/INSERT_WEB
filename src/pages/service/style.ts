@@ -23,7 +23,7 @@ export const SubTitle = styled.div`
   margin-bottom: 1%;
 `;
 
-export const ProjectAnchor = styled.a`
+export const ProjectAnchor = styled.div`
   width: 50%;
 `;
 
@@ -34,6 +34,7 @@ export const ProjectLogo = styled.img`
 export const ProjectTitle = styled.div`
   ${font.D3}
   margin-bottom: 2.5%;
+  color: ${color.black};
 `;
 
 export const ProjectSubTitle = styled.div`
@@ -51,7 +52,8 @@ export const ProjectContentsLayout = styled.div`
   width: 50%;
 `;
 
-export const ProjectLayout = styled.div`
+export const ProjectLayout = styled.a`
+  text-decoration: none;
   display: flex;
   justify-content: flex-end;
   gap: 0 3%;

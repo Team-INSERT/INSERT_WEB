@@ -22,6 +22,7 @@ export const HomePageLogo = styled.img`
 
 export const HomePageHeader = styled.div`
   display: flex;
+  flex-shrink: 0;
   border-bottom: 2px solid ${color.content};
   margin: 2% 10% 0 10%;
 `;
@@ -46,25 +47,38 @@ export const HomePageMiddle = styled.div`
 
 export const HomePageMiddle1 = styled.div`
   display: flex;
+  flex-shrink: 0;
   color: ${color.black};
   margin: 2% 0 0 10%;
 `;
 
+export const ValueBox = styled.div`
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  width: 100%;
+`;
 export const Title = styled.p`
   display: flex;
+  flex-shrink: 0;
   ${font.H2};
   color: ${color.text};
   margin: 3% 0% 0 0;
 `;
 
 export const Value = styled.p`
-  display: flex;
+  flex-shrink: 0;
   ${font.D2};
   margin: 0 0 5% 0;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  width: 100px;
 `;
 
 export const HomePageMiddle2 = styled.div`
   display: flex;
+  flex-shrink: 0;
   color: ${color.black};
   margin: 2% 0 0 10%;
 `;
