@@ -74,12 +74,12 @@ export const TimeLineDate = styled.div<{ isActive: boolean }>`
   &:hover {
     cursor: pointer;
     transform: scale(1.2);
+    background-color: #dedede;
   }
   ${(props) =>
     props.isActive &&
     css`
       background-color: #dedede;
-      color: ${color.white};
       cursor: pointer;
       transform: scale(1.2);
     `}
