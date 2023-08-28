@@ -81,11 +81,17 @@ export const FilterButton = styled.div<{ isActive: boolean }>`
           }
         `}
 `;
-
+export const Pagination = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
 export const Member = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 3% 0 10% 8%;
+  padding: 3% 0 10% 0;
+  width: 100%;
   @media ${theme.device.fold} {
     padding: 3% 0 10% 0;
   }
@@ -95,19 +101,23 @@ export const Member = styled.div`
   @media ${theme.device.tablit} {
     padding: 3% 0 10% 2%;
   }
+
+  ${Pagination} {
+    margin: 0 auto;
+  }
 `;
 
 export const MemberMiddle = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 2%;
+  margin: 2% 0 0 2%;
 `;
 
 export const MemberProfile = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 60px 17px;
+  margin: 0 0 60px 40px;
   & > a {
     text-decoration: none;
   }
@@ -170,28 +180,37 @@ export const Error = styled.div`
   ${font.H1};
 `;
 
-export const Pagination = styled.div`
-  width: 100%;
-`;
-export const PaginationButton = styled.button<{ isActive: boolean }>`
-  padding: 8px 12px;
+export const PaginationButtonLeft = styled.button`
+  position: absolute;
   border: none;
+  margin: 50% 5% 0 0;
   cursor: pointer;
   font-size: 1rem;
   color: ${color.gray};
   outline: none;
   background: none;
-  font-wight: 800;
-  font-size: 20px;
+  font-weight: 800;
+  font-size: 30px;
   flex-shrink: 0;
+  width: 4%;
+  &:hover {
+    background-color: #dedede;
+  }
+`;
 
-  ${(props) =>
-    props.isActive &&
-    css`
-      color: ${color.black};
-      font-weight: 800;
-    `}
-
+export const PaginationButtonRight = styled.button`
+  position: absolute;
+  border: none;
+  margin: 50% 0 0 60%;
+  cursor: pointer;
+  font-size: 1rem;
+  color: ${color.gray};
+  outline: none;
+  background: none;
+  font-weight: 800;
+  width: 4%;
+  font-size: 30px;
+  flex-shrink: 0;
   &:hover {
     background-color: #dedede;
   }
