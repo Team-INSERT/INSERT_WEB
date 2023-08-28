@@ -36,18 +36,26 @@ function Member() {
     getMember();
   }, []);
 
+  const [currentPage, setCurrentPage] = useState(1);
+
   const active = (filter: Tech | Gen, item: string) => {
     if (filter.includes(item)) {
       const notActive = filter.filter((activeItem) => activeItem !== item);
-      return filter === tech ? setTech(notActive) : setGen(notActive);
+      if (filter === tech) {
+        setTech(notActive);
+      } else {
+        setGen(notActive);
+      }
+    } else if (filter === tech) {
+      setTech([...filter, item]);
+    } else {
+      setGen([...filter, item]);
     }
-    return filter === tech
-      ? setTech([...filter, item])
-      : setGen([...filter, item]);
-  };
-  const profilesPage = 6;
 
-  const [currentPage, setCurrentPage] = useState(1);
+    setCurrentPage(1);
+  };
+
+  const profilesPage = 6;
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -94,16 +102,20 @@ function Member() {
           </S.MemberFilter>
           <S.Member>
             <S.Pagination>
-              {Array.from({ length: totalPages }, (_, index) => (
-                <S.PaginationButton
-                  key={index}
-                  onClick={() => handlePageChange(index + 1)}
-                  isActive={index + 1 === currentPage}
-                >
-                  {index + 1}
-                </S.PaginationButton>
-              ))}
+              <S.PaginationButtonLeft
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                {"<"}
+              </S.PaginationButtonLeft>
+              <S.PaginationButtonRight
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              >
+                {" >"}
+              </S.PaginationButtonRight>
             </S.Pagination>
+
             <S.Loading loading={isLoading} size="2.5rem" />
             {filteredMembers
               .slice(startIndex, endIndex)
