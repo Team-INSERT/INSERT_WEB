@@ -193,6 +193,7 @@ export const PaginationButtonLeft = styled.button`
   font-size: 30px;
   flex-shrink: 0;
   width: 4%;
+  height: 5%;
   &:hover {
     background-color: #dedede;
   }
@@ -209,9 +210,14 @@ export const PaginationButtonRight = styled.button`
   background: none;
   font-weight: 800;
   width: 4%;
+  height: 5%;
   font-size: 30px;
   flex-shrink: 0;
   &:hover {
     background-color: #dedede;
   }
+`;
+
+export const ButtonImg = styled.img`
+  width: 50%;
 `;

@@ -106,13 +106,13 @@ function Member() {
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
               >
-                {"<"}
+                <S.ButtonImg src="images/left.png" />
               </S.PaginationButtonLeft>
               <S.PaginationButtonRight
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
               >
-                {" >"}
+                <S.ButtonImg src="images/right.png" />
               </S.PaginationButtonRight>
             </S.Pagination>
 
