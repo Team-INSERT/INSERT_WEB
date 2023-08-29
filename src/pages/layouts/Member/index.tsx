@@ -36,18 +36,23 @@ function Member() {
     getMember();
   }, []);
 
-  const active = (filter: Tech | Gen, item: string) => {
-    if (filter.includes(item)) {
-      const notActive = filter.filter((activeItem) => activeItem !== item);
-      return filter === tech ? setTech(notActive) : setGen(notActive);
-    }
-    return filter === tech
-      ? setTech([...filter, item])
-      : setGen([...filter, item]);
-  };
-  const profilesPage = 6;
-
   const [currentPage, setCurrentPage] = useState(1);
+
+  const active = (filter: Tech | Gen, item: string) => {
+    const newFilter = filter.includes(item)
+      ? filter.filter((activeItem) => activeItem !== item)
+      : [...filter, item];
+
+    if (filter === tech) {
+      setTech(newFilter);
+    } else {
+      setGen(newFilter);
+    }
+
+    setCurrentPage(1);
+  };
+
+  const profilesPage = 6;
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -94,16 +99,20 @@ function Member() {
           </S.MemberFilter>
           <S.Member>
             <S.Pagination>
-              {Array.from({ length: totalPages }, (_, index) => (
-                <S.PaginationButton
-                  key={index}
-                  onClick={() => handlePageChange(index + 1)}
-                  isActive={index + 1 === currentPage}
-                >
-                  {index + 1}
-                </S.PaginationButton>
-              ))}
+              <S.PaginationButtonLeft
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                <S.ButtonImg src="images/left.png" />
+              </S.PaginationButtonLeft>
+              <S.PaginationButtonRight
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              >
+                <S.ButtonImg src="images/right.png" />
+              </S.PaginationButtonRight>
             </S.Pagination>
+
             <S.Loading loading={isLoading} size="2.5rem" />
             {filteredMembers
               .slice(startIndex, endIndex)
