@@ -39,17 +39,14 @@ function Member() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const active = (filter: Tech | Gen, item: string) => {
-    if (filter.includes(item)) {
-      const notActive = filter.filter((activeItem) => activeItem !== item);
-      if (filter === tech) {
-        setTech(notActive);
-      } else {
-        setGen(notActive);
-      }
-    } else if (filter === tech) {
-      setTech([...filter, item]);
+    const newFilter = filter.includes(item)
+      ? filter.filter((activeItem) => activeItem !== item)
+      : [...filter, item];
+
+    if (filter === tech) {
+      setTech(newFilter);
     } else {
-      setGen([...filter, item]);
+      setGen(newFilter);
     }
 
     setCurrentPage(1);
