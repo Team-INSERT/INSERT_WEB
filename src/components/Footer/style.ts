@@ -9,6 +9,7 @@ export const FooterLayout = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${color.tertiary};
+  padding: 4% 0 1% 0;
 `;
 
 export const FooterContainer = styled.div`
