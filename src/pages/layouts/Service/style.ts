@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   margin: 0 10% 5% 10%;
   flex-direction: column;
+  background-color: ${color.white};
 `;
 
 export const Title = styled.div`
