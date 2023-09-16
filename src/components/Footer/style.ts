@@ -4,12 +4,12 @@ import color from "../../styles/color";
 
 export const FooterLayout = styled.div`
   width: 100%;
-  height: 400px;
   color: ${color.content};
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: ${color.tertiary};
+  padding: 4% 0 1% 0;
 `;
 
 export const FooterContainer = styled.div`
